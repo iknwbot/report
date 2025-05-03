@@ -209,7 +209,9 @@ function formatDate(dateString) {
           ${report.githubUrl ? `<img src="${report.githubUrl}" alt="活動画像" class="report-image">` : ''}
           <div class="report-text">
             <div class="report-header">活動報告<span class="report-date">${formatDate(report.eventDate)}</span></div>
-            <div class="report-title">${report.siteName}</div>
+           <div class="report-title">
+            <a href="${report.siteUrl}" target="_blank" rel="noopener noreferrer">${report.siteName}</a>
+            </div>
             <div class="report-message">開催タイプ: ${report.eventType}</div>
             <div class="report-message">参加人数: 大人${report.adults}名 / 子ども${report.children}名</div>
             <div class="report-message">コメント: ${report.internalComments}</div>
