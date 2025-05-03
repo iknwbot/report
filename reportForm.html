@@ -171,6 +171,7 @@ document.getElementById("submitReport").addEventListener("click", () => {
 
 // 確定→送信処理
 document.getElementById("confirmSubmit").addEventListener("click", async () => {
+  document.getElementById("confirmSubmit").disabled = true;
   document.getElementById("loadingMsg").style.display = "block";
 
   const formData = new URLSearchParams({
