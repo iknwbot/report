@@ -304,14 +304,9 @@ window.onerror = function(message, source, lineno, colno, error) {
 
 
   // timestamp が有効かチェック
-  json.forEach((report, index) => {
-    const parsedDate = new Date(report.timestamp);
-    if (isNaN(parsedDate)) {
-      console.warn(`❌ 無効なtimestamp (${index}):`, report.timestamp);
-    } else {
-      console.log(`✅ timestamp OK (${index}):`, report.timestamp, "→", parsedDate.toISOString());
-    }
-  });
+json.forEach((report, index) => {
+  console.log(`📌 timestamp (${index}):`, report.timestamp);
+});
           
           initializeFilters(globalReports);
           updateReportList(globalReports);
@@ -332,7 +327,19 @@ window.onerror = function(message, source, lineno, colno, error) {
   return `${year}年${month}月${day}日（${weekday}）`;
 }
 
+function formatTimestampToJapaneseText(timestamp) {
+  if (!timestamp || typeof timestamp !== "string") return "日付不明";
+  const [datePart] = timestamp.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const date = new Date(`${year}-${month}-${day}`);
+  if (isNaN(date)) return "日付不明";
+  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+  const weekday = weekdays[date.getDay()];
+  return `${year}年${month}月${day}日（${weekday}）`;
+}
 
+
+    
     function initializeFilters(reports) {
       const monthFilter = document.getElementById("monthFilter");
       const siteFilter = document.getElementById("siteFilter");
@@ -383,7 +390,9 @@ const html = filteredReports.map(report => `
   <div class="report-item">
     ${report.githubUrl ? `<img src="${encodeURI(report.githubUrl)}" alt="活動画像" class="report-image">` : ''}
     <div class="report-text">
-      <div class="report-header">活動報告<span class="report-date">${formatDate(report.eventDate)}</span></div>
+     <div class="report-header">活動報告<span class="report-date">
+  ${formatTimestampToJapaneseText(report.timestamp)}
+</span></div>
       <div class="report-title"><a href="${report.siteURL}" target="_blank">${report.siteName}</a></div>
       <div class="report-message">開催タイプ: ${report.eventType}</div>
       <div class="report-message">参加人数: 大人${report.adults || 0}名 / 子ども${report.children || 0}名</div>
@@ -418,7 +427,8 @@ function handleEditClick(button) {
 function openEditForm(report) {
   console.log("🟢 openEditForm 呼び出し:", report);
 
-  const found = globalReports.find(r => r.timestamp === report.timestamp);
+const found = globalReports.find(r => r.timestamp === report.timestamp);
+
   console.log("🔍 マッチしたreport:", found);
 
   if (!found) {
