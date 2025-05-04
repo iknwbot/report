@@ -227,6 +227,32 @@
     new VConsole();
   </script>
 
+  <script>
+  console.log("🔥 script loaded");
+
+  window.addEventListener("load", () => {
+    console.log("📡 Fetching test JSON...");
+    fetch("https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + Date.now())
+      .then(res => {
+        console.log("📥 レスポンス取得:", res.status, res.headers.get("content-type"));
+        return res.text();  // ← 最初は text() で取得して中身確認
+      })
+      .then(text => {
+        console.log("📄 中身:", text.slice(0, 300));  // 最初の300文字だけ表示
+        try {
+          const json = JSON.parse(text);
+          console.log("✅ JSON parse 成功:", json.length);
+        } catch (e) {
+          console.error("❌ JSON parse エラー:", e);
+        }
+      })
+      .catch(err => {
+        console.error("🚨 fetch エラー:", err);
+      });
+  });
+</script>
+
+
   <!-- Main Script -->
   <script>
     console.log("✅ JS読み込み成功");
