@@ -439,7 +439,8 @@ function confirmDelete() {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       action: "deleteReport",
-      timestamp: deleteTargetTimestamp
+      timestamp: deleteTargetTimestamp,
+      userId: currentUserId
     })
   })
   .then(res => res.json())
