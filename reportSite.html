@@ -158,25 +158,29 @@
 let currentUserId = "";
 let currentUserSite = "";
 let globalReports = [];
-
+    
 liff.init({ liffId: "2007364105-ol986GKR" })
   .then(() => liff.getProfile())
   .then(profile => {
     currentUserId = profile.userId;
     return fetch("https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime());
   })
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error("JSON取得失敗");
+    return res.json();
+  })
   .then(json => {
     const record = json.find(r => r.userId === currentUserId);
-    currentUserSite = record ? record.siteName : "";
+    currentUserSite = record?.siteName || "不明";  // ← nullチェック＆フォールバック
     globalReports = json.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     initializeFilters(globalReports);
     updateReportList(globalReports);
   })
   .catch(error => {
-    document.getElementById("report-list").innerHTML = "データを取得できませんでした。";
-    console.error("LIFF 初期化またはデータ取得エラー:", error);
+    console.error("初期化エラー:", error);
+    document.getElementById("report-list").innerHTML = "データを取得できませんでした。<br>（LIFFまたはJSON読み込み失敗）";
   });
+
 
 
 
