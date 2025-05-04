@@ -155,14 +155,30 @@
   </div>
 
   <script>
-    let currentUserId = "";
+let currentUserId = "";
+let currentUserSite = "";
+let globalReports = [];
 
-    liff.init({ liffId: "2007364105-ol986GKR" })
-      .then(() => liff.getProfile())
-      .then(profile => {
-        currentUserId = profile.userId;
-        loadReports();
-      });
+liff.init({ liffId: "2007364105-ol986GKR" })
+  .then(() => liff.getProfile())
+  .then(profile => {
+    currentUserId = profile.userId;
+    return fetch("https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime());
+  })
+  .then(res => res.json())
+  .then(json => {
+    const record = json.find(r => r.userId === currentUserId);
+    currentUserSite = record ? record.siteName : "";
+    globalReports = json.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    initializeFilters(globalReports);
+    updateReportList(globalReports);
+  })
+  .catch(error => {
+    document.getElementById("report-list").innerHTML = "データを取得できませんでした。";
+    console.error("LIFF 初期化またはデータ取得エラー:", error);
+  });
+
+
 
     async function loadReports() {
       try {
@@ -211,34 +227,39 @@
       siteFilter.addEventListener("change", () => updateReportList(globalReports));
     }
 
-    function updateReportList(reports) {
-      const monthFilter = document.getElementById("monthFilter").value;
-      const siteFilter = document.getElementById("siteFilter").value;
+   function updateReportList(reports) {
+  const monthFilter = document.getElementById("monthFilter").value;
+  const siteFilter = document.getElementById("siteFilter").value;
 
-      const filteredReports = reports.filter(report => {
-        const date = new Date(report.eventDate);
-        const reportMonth = `${date.getFullYear()}年${("0" + (date.getMonth() + 1)).slice(-2)}月`;
-        const matchMonth = monthFilter === "all" || reportMonth === monthFilter;
-        const matchSite = siteFilter === "all" || report.siteName === siteFilter;
-        return matchMonth && matchSite;
-      });
+  const filteredReports = reports.filter(report => {
+    const date = new Date(report.eventDate);
+    const reportMonth = `${date.getFullYear()}年${("0" + (date.getMonth() + 1)).slice(-2)}月`;
+    const matchMonth = monthFilter === "all" || reportMonth === monthFilter;
+    const matchSite = siteFilter === "all" || report.siteName === siteFilter;
+    return matchMonth && matchSite;
+  });
 
-      const reportItems = filteredReports.map(report => `
-        <div class="report-item">
-          ${report.githubUrl ? `<img src="${report.githubUrl}" alt="活動画像" class="report-image">` : ''}
-          <div class="report-text">
-            <div class="report-header">活動報告<span class="report-date">${formatDate(report.eventDate)}</span></div>
-            <div class="report-title"><a href="${report.siteURL}" target="_blank">${report.siteName}</a></div>
-            <div class="report-message">開催タイプ: ${report.eventType}</div>
-            <div class="report-message">参加人数: 大人${report.adults}名 / 子ども${report.children}名</div>
-            <div class="report-message">コメント: ${report.internalComments}</div>
-            ${report.userId === currentUserId ? `<button onclick="openEditForm('${report.timestamp}', '${report.internalComments.replace(/'/g, "\'") || ''}')">変更</button>` : ''}
-          </div>
-        </div>
-      `).join('');
+  const reportItems = filteredReports.map(report => `
+    <div class="report-item">
+      ${report.githubUrl ? `<img src="${report.githubUrl}" alt="活動画像" class="report-image">` : ''}
+      <div class="report-text">
+        <div class="report-header">活動報告<span class="report-date">${formatDate(report.eventDate)}</span></div>
+        <div class="report-title"><a href="${report.siteURL}" target="_blank">${report.siteName}</a></div>
+        <div class="report-message">開催タイプ: ${report.eventType}</div>
+        <div class="report-message">参加人数: 大人${report.adults}名 / 子ども${report.children}名</div>
+        <div class="report-message">コメント: ${report.internalComments}</div>
+        ${
+          (currentUserSite === "事務局" || currentUserSite === report.siteName)
+            ? `<button onclick="openEditForm('${report.timestamp}', '${(report.internalComments || '').replace(/'/g, "\\'")}')">変更</button>`
+            : ""
+        }
+      </div>
+    </div>
+  `).join('');
 
-      document.getElementById("report-list").innerHTML = reportItems || "該当する活動報告がありません。";
-    }
+  document.getElementById("report-list").innerHTML = reportItems || "該当する活動報告がありません。";
+}
+
 
     function openEditForm(timestamp, comment) {
       document.getElementById("edit-form").style.display = "block";
