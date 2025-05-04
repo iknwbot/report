@@ -353,11 +353,22 @@ window.onerror = function(message, source, lineno, colno, error) {
       monthFilter.addEventListener("change", () => updateReportList(globalReports));
       siteFilter.addEventListener("change", () => updateReportList(globalReports));
     }
+function updateReportList(reports) {
+  try {
+    console.log("📝 updateReportList() 呼び出し");
 
-    function updateReportList(reports) {
-        console.log("📝 updateReportList() 呼び出し");
-  console.log("📄 レポート件数:", reports.length);
-  console.log("📄 最初のレポート:", reports[0]);
+    if (!Array.isArray(reports)) {
+      console.error("❌ reports が配列ではありません:", reports);
+      return;
+    }
+
+    console.log("📄 レポート件数:", reports.length);
+
+    if (reports.length === 0) {
+      console.warn("⚠️ レポートが空です");
+    } else {
+      console.log("📄 最初のレポート:", reports[0]);
+    }
       const monthFilter = document.getElementById("monthFilter").value;
       const siteFilter = document.getElementById("siteFilter").value;
 
