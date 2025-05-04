@@ -99,9 +99,33 @@
       background-color: #5d8e24;
     }
 
-    .button-container {
-  text-align: right;
-  margin-top: 10px;
+    @media only screen and (max-width: 600px) {
+  .report-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .report-image {
+    margin: 0 0 10px 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .report-text {
+    text-align: left;
+    width: 100%;
+  }
+
+  .report-message,
+  .report-header,
+  .report-title {
+    text-align: left;
+  }
+
+  .button-container {
+    text-align: right;
+  }
 }
 
     
