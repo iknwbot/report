@@ -443,9 +443,17 @@ function openDeleteModal() {
 function closeDeleteModal() {
   document.getElementById("deleteConfirmModal").classList.remove("show");
 }
-
 function confirmDelete() {
+  const deleteTargetTimestamp = document.getElementById("edit-timestamp").value;
+  console.log("🔴 confirmDelete(): timestamp to delete = ", deleteTargetTimestamp);
+
+  if (!deleteTargetTimestamp) {
+    alert("⚠️ timestampが取得できませんでした。もう一度お試しください。");
+    return;
+  }
+
   document.getElementById("deleteLoadingMsg").style.display = "block";
+
   fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -457,18 +465,20 @@ function confirmDelete() {
   })
   .then(res => res.json())
   .then(res => {
+    console.log("✅ 削除成功:", res);
     document.getElementById("deleteLoadingMsg").style.display = "none";
-    console.log("✅ 削除成功", res);
     closeDeleteModal();
     closeEditModal();
     globalReports = globalReports.filter(r => r.timestamp !== deleteTargetTimestamp);
     updateReportList(globalReports);
-showSuccessPopup("活動報告を削除しました");
+    showSuccessPopup("活動報告を削除しました");
   })
   .catch(err => {
     alert("削除エラー: " + err);
+    document.getElementById("deleteLoadingMsg").style.display = "none";
   });
 }
+
 
 
 function submitEdit() {
