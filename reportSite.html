@@ -287,12 +287,16 @@ function openEditForm(timestamp, comment) {
     }
 
 function submitEdit() {
+  console.log("🟢 submitEdit 実行");
+
   const timestamp = document.getElementById("edit-timestamp").value;
   const newDate = document.getElementById("edit-eventDate").value;
   const newType = document.getElementById("edit-eventType").value;
   const newAdults = document.getElementById("edit-adults").value;
   const newChildren = document.getElementById("edit-children").value;
   const newComment = document.getElementById("edit-comments").value;
+
+  console.log("📤 送信データ:", { timestamp, newDate, newType, newAdults, newChildren, newComment });
 
   fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
     method: "POST",
@@ -307,16 +311,22 @@ function submitEdit() {
       internalComments: newComment
     })
   })
-  .then(res => res.json())
   .then(res => {
+    console.log("📬 応答ステータス:", res.status);
+    return res.json();
+  })
+  .then(res => {
+    console.log("✅ 応答データ:", res);
     alert(res.message);
     cancelEdit();
     updateReportList(globalReports); // 再描画
   })
   .catch(err => {
+    console.error("🚨 更新エラー:", err);
     alert("更新エラー: " + err);
   });
 }
+
 
   </script>
 
