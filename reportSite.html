@@ -277,7 +277,7 @@ const html = filteredReports.map(report => `
 
 function openEditForm(report) {
   console.log("🟢 openEditForm 呼び出し:", report);
-  console.log("🔍 globalReports内のtimestampと一致するかチェック:", report.timestamp);
+
   const found = globalReports.find(r => r.timestamp === report.timestamp);
   console.log("🔍 マッチしたreport:", found);
 
@@ -286,7 +286,13 @@ function openEditForm(report) {
     return;
   }
 
-  document.getElementById("edit-form").style.display = "block";
+  const form = document.getElementById("edit-form");
+
+  // ✅ 編集フォームの表示確認ログ
+  form.style.display = "block";
+  console.log("✅ 編集フォームのdisplayを:", form.style.display);
+
+  // ✅ 値のセット
   document.getElementById("edit-timestamp").value = report.timestamp;
   document.getElementById("edit-eventDate").value = report.eventDate || "";
   document.getElementById("edit-eventType").value = report.eventType || '';
@@ -296,6 +302,7 @@ function openEditForm(report) {
 
   console.log("✅ 編集フォームに値をセットしました");
 }
+
 
 
 
