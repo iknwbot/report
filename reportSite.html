@@ -264,27 +264,27 @@
     <input type="hidden" id="edit-timestamp">
     <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
     <label>開催タイプ:<br>
-  <select id="edit-eventType">
-    <option value="">選択してください</option>
-    <option value="子ども食堂（会食）">子ども食堂（会食）</option>
-    <option value="子ども食堂（お弁当配布）">子ども食堂（お弁当配布）</option>
-    <option value="フードパントリー">フードパントリー</option>
-    <option value="子ども食堂＆フードパントリー">子ども食堂＆フードパントリー</option>
-  </select>
-</label>
-
+      <select id="edit-eventType">
+        <option value="">選択してください</option>
+        <option value="子ども食堂（会食）">子ども食堂（会食）</option>
+        <option value="子ども食堂（お弁当配布）">子ども食堂（お弁当配布）</option>
+        <option value="フードパントリー">フードパントリー</option>
+        <option value="子ども食堂＆フードパントリー">子ども食堂＆フードパントリー</option>
+      </select>
+    </label><br>
     <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
     <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
     <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
 
     <div class="modal-buttons">
       <button class="submit-btn" onclick="submitEdit()">更新する</button>
-      <button class="cancel-btn" onclick="closeEditModal()">キャンセル</button>
+      <button class="cancel-btn" onclick="confirmDelete()">削除する</button>
     </div>
 
     <div id="editLoadingMsg" class="loading-msg" style="display: none;">お待ちください...</div>
   </div>
 </div>
+
 
 
   <div id="successModal" class="modal">
