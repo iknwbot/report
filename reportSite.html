@@ -193,29 +193,38 @@ liff.init({ liffId: "2007364105-ol986GKR" })
     console.log("👤 プロフィール取得成功", profile);
     currentUserId = profile.userId;
 
-    // GAS 経由で siteName を取得
- const siteUrl = `https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`;
+    const siteUrl = `https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`;
+    console.log("🔍 拠点取得URL:", siteUrl);
     return fetch(siteUrl);
   })
-  .then(res => res.json())
+  .then(res => {
+    console.log("📥 siteName取得レスポンス:", res.status);
+    return res.json();
+  })
   .then(data => {
+    console.log("📦 siteName取得成功:", data);
     currentUserSite = data.siteName || "不明";
     console.log("🏠 拠点名:", currentUserSite);
 
-    // JSON 取得＆表示開始
     const jsonUrl = "https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime();
+    console.log("🌐 JSON取得開始:", jsonUrl);
     return fetch(jsonUrl);
   })
-  .then(res => res.json())
+  .then(res => {
+    console.log("📥 JSONレスポンス:", res.status);
+    return res.json();
+  })
   .then(json => {
+    console.log("📦 JSON取得成功:", json.length);
     globalReports = json.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     initializeFilters(globalReports);
     updateReportList(globalReports);
   })
   .catch(error => {
-    console.error("🚨 初期化エラー:", error);
+    console.error("🚨 エラー発生:", error);
     document.getElementById("report-list").innerHTML = "データを取得できませんでした。";
   });
+
 
 
 
