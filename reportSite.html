@@ -300,15 +300,16 @@ window.onerror = function(message, source, lineno, colno, error) {
         .then(json => {
 globalReports = json;
 
-// timestamp が有効かチェック
-json.forEach((report, index) => {
-  const parsedDate = new Date(report.timestamp);
-  if (isNaN(parsedDate)) {
-    console.warn(`❌ 無効なtimestamp (${index}):`, report.timestamp);
-  } else {
-    console.log(`✅ timestamp OK (${index}):`, report.timestamp, "→", parsedDate.toISOString());
-  }
-});
+
+  // timestamp が有効かチェック
+  json.forEach((report, index) => {
+    const parsedDate = new Date(report.timestamp);
+    if (isNaN(parsedDate)) {
+      console.warn(`❌ 無効なtimestamp (${index}):`, report.timestamp);
+    } else {
+      console.log(`✅ timestamp OK (${index}):`, report.timestamp, "→", parsedDate.toISOString());
+    }
+  });
           
           initializeFilters(globalReports);
           updateReportList(globalReports);
