@@ -178,6 +178,43 @@
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+    .modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-buttons .submit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-buttons .submit-btn:hover {
+  background-color: #45a049;
+}
+
+.modal-buttons .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-buttons .cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
     .loading-msg {
       color: #d00;
       font-weight: bold;
