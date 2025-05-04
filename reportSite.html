@@ -261,17 +261,25 @@ const html = filteredReports.map(report => `
     }
 
 function openEditForm(timestamp, comment) {
+  console.log("🟢 openEditForm 開始", { timestamp, comment });
+
   const report = globalReports.find(r => r.timestamp === timestamp);
-  if (!report) return;
+  if (!report) {
+    console.warn("❌ 該当レコードが見つかりません:", timestamp);
+    return;
+  }
 
   document.getElementById("edit-form").style.display = "block";
   document.getElementById("edit-timestamp").value = timestamp;
-  document.getElementById("edit-eventDate").value = report.eventDate;
+  document.getElementById("edit-eventDate").value = report.eventDate || "";
   document.getElementById("edit-eventType").value = report.eventType || '';
   document.getElementById("edit-adults").value = report.adults || 0;
   document.getElementById("edit-children").value = report.children || 0;
   document.getElementById("edit-comments").value = comment || '';
+
+  console.log("✅ 編集フォームに値をセットしました");
 }
+
 
 
     function cancelEdit() {
