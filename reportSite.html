@@ -405,6 +405,7 @@ function submitEdit() {
   const newAdults = document.getElementById("edit-adults").value;
   const newChildren = document.getElementById("edit-children").value;
   const newComment = document.getElementById("edit-comments").value;
+  
 
   console.log("📤 送信データ:", { timestamp, newDate, newType, newAdults, newChildren, newComment });
 
@@ -420,7 +421,9 @@ function submitEdit() {
       eventType: newType,
       adults: newAdults,
       children: newChildren,
-      internalComments: newComment
+      internalComments: newComment,
+      siteName: currentUserSite,    
+      nickname: profile.displayName
     })
   })
   .then(res => {
