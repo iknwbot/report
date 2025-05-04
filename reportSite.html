@@ -214,6 +214,15 @@
   background-color: #e0e0e0;
 }
 
+    .modal-buttons .delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.modal-buttons .delete-btn:hover {
+  background-color: #c0392b;
+}
+
 
     .loading-msg {
       color: #d00;
@@ -254,7 +263,16 @@
     <h3>報告内容を修正しますか？</h3>
     <input type="hidden" id="edit-timestamp">
     <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
-    <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
+    <label>開催タイプ:<br>
+  <select id="edit-eventType">
+    <option value="">選択してください</option>
+    <option value="子ども食堂（会食）">子ども食堂（会食）</option>
+    <option value="子ども食堂（お弁当配布）">子ども食堂（お弁当配布）</option>
+    <option value="フードパントリー">フードパントリー</option>
+    <option value="子ども食堂＆フードパントリー">子ども食堂＆フードパントリー</option>
+  </select>
+</label>
+
     <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
     <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
     <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
@@ -276,6 +294,23 @@
     </div>
   </div>
 
+
+  <div id="deleteConfirmModal" class="modal">
+  <div class="modal-content">
+    <h3>本当にこの投稿を削除していいですか？</h3>
+    <div class="modal-buttons">
+      <button class="delete-btn" onclick="confirmDelete()">はい</button>
+      <button class="cancel-btn" onclick="closeDeleteModal()">いいえ</button>
+    </div>
+  </div>
+</div>
+
+  <div class="modal-buttons">
+  <button class="submit-btn" onclick="submitEdit()">更新する</button>
+  <button class="delete-btn" onclick="openDeleteModal()">削除する</button>
+</div>
+
+
   <script>
     let currentUserId = "";
     let currentUserSite = "";
@@ -285,13 +320,19 @@
 
 
 
-    liff.init({ liffId: "2007364105-ol986GKR" })
-      .then(() => liff.getProfile())
-      .then(profile => {
-        currentUserId = profile.userId;
-        currentNickname = profile.displayName;
-        loadReports();
-      });
+liff.init({ liffId: "2007364105-ol986GKR" })
+  .then(() => liff.getProfile())
+  .then(profile => {
+    currentUserId = profile.userId;
+    currentNickname = profile.displayName;
+    return fetch(`https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`);
+  })
+  .then(res => res.json())
+  .then(data => {
+    currentUserSite = data.siteName || "不明";
+    loadReports();
+  });
+
 
     async function loadReports() {
       const response = await fetch("https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime());
@@ -372,6 +413,41 @@
     function closeSuccessModal() {
       document.getElementById("successModal").classList.remove("show");
     }
+
+    let deleteTargetTimestamp = "";
+
+function openDeleteModal() {
+  deleteTargetTimestamp = document.getElementById("edit-timestamp").value;
+  document.getElementById("deleteConfirmModal").classList.add("show");
+}
+
+function closeDeleteModal() {
+  document.getElementById("deleteConfirmModal").classList.remove("show");
+}
+
+function confirmDelete() {
+  fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      action: "deleteReport",
+      timestamp: deleteTargetTimestamp
+    })
+  })
+  .then(res => res.json())
+  .then(res => {
+    console.log("✅ 削除成功", res);
+    closeDeleteModal();
+    closeEditModal();
+    globalReports = globalReports.filter(r => r.timestamp !== deleteTargetTimestamp);
+    updateReportList(globalReports);
+    showSuccessModal();
+  })
+  .catch(err => {
+    alert("削除エラー: " + err);
+  });
+}
+
 
 function submitEdit() {
   const timestamp = document.getElementById("edit-timestamp").value;
