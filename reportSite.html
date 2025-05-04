@@ -276,6 +276,15 @@ function openEditForm(report) {
 
   const form = document.getElementById("edit-form");
 
+  const computed = window.getComputedStyle(form);
+console.log("🧪 computed display:", computed.display);
+console.log("🧪 computed visibility:", computed.visibility);
+console.log("🧪 computed opacity:", computed.opacity);
+console.log("🧪 computed z-index:", computed.zIndex);
+console.log("🧪 computed position:", computed.position);
+console.log("🧪 computed top:", computed.top);
+
+
   // ✅ 編集フォームの表示確認ログ
   form.style.display = "block";
   console.log("✅ 編集フォームのdisplayを:", form.style.display);
