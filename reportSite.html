@@ -340,10 +340,18 @@ const html = filteredReports.map(report => `
       <div class="report-message">参加人数: 大人${report.adults || 0}名 / 子ども${report.children || 0}名</div>
       <div class="report-message">コメント: ${report.internalComments}</div>
 
+
+
+
+
+
         ${
           (currentUserSite === "事務局" || currentUserSite === report.siteName)
             ? `<div class="button-container">
-                 <button class="edit-button" onclick='openEditForm(${JSON.stringify(report)})'>修正する</button>
+              <button class="edit-button" 
+        onclick='openEditForm(JSON.parse(decodeURIComponent("${encodeURIComponent(JSON.stringify(report))}")))'>
+  修正する
+</button>
                </div>`
             : ""
         }
