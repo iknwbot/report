@@ -144,15 +144,13 @@
 }
 
 .modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
-  max-height: 80vh;
-  overflow-y: auto;
+  box-sizing: border-box;
+  margin: 0 10px;
 }
+
+    
 .modal-content label {
   display: block;
   font-size: 18px;
@@ -343,7 +341,7 @@ function openEditForm(report) {
   }
 
   document.getElementById("edit-timestamp").value = report.timestamp;
-  document.getElementById("edit-eventDate").value = report.eventDate || "";
+  document.getElementById("edit-eventDate").value = toDateInputFormat(report.eventDate || "");
   document.getElementById("edit-eventType").value = report.eventType || '';
   document.getElementById("edit-adults").value = report.adults || 0;
   document.getElementById("edit-children").value = report.children || 0;
@@ -356,6 +354,11 @@ function openEditForm(report) {
 
 function closeEditModal() {
   document.getElementById("editModal").classList.remove("show");
+}
+
+    function toDateInputFormat(dateStr) {
+  const date = new Date(dateStr);
+  return date.toISOString().split("T")[0];
 }
 
 
@@ -415,7 +418,6 @@ closeEditModal();
     <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
 
     <button type="button" onclick="submitEdit()">更新する</button>
-    <button type="button" onclick="closeEditModal()">キャンセル</button>
   </div>
 </div>
 
