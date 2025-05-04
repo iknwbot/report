@@ -142,19 +142,7 @@
   <div id="report-list">読み込み中...</div>
 
   
-  <!-- 編集フォーム -->
-<div id="edit-form" style="display:none; margin-top:20px;">
-  <h2>報告内容の修正</h2>
-  <input type="hidden" id="edit-timestamp">
-  <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
-  <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
-  <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
-  <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
-  <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
-<button type="button" onclick="submitEdit()">更新する</button>
-<button type="button" onclick="cancelEdit()">キャンセル</button>
 
-</div>
 
   <!-- LIFF SDK & vConsole -->
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -351,6 +339,18 @@ function submitEdit() {
   });
 }
 </script>
+  <!-- 編集フォーム -->
+<div id="edit-form" style="display:none; margin-top:20px;">
+  <h2>報告内容の修正</h2>
+  <input type="hidden" id="edit-timestamp">
+  <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
+  <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
+  <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
+  <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
+  <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
+<button type="button" onclick="submitEdit()">更新する</button>
+<button type="button" onclick="cancelEdit()">キャンセル</button>
 
+</div>
 </body>
 </html>
