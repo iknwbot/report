@@ -429,15 +429,14 @@ liff.init({ liffId: "2007364105-ol986GKR" })
 function openEditForm(report) {
   document.getElementById("edit-timestamp").value = report.timestamp;
 
-  // 日付が "YYYY/MM/DD HH:MM:SS" または "YYYY-MM-DD" のどちらでも扱えるように処理
-  let parsedDate = new Date(report.eventDate);
+  // eventDateが "YYYY/MM/DD HH:MM:SS" でも "YYYY-MM-DD" でも対応
+  let parsedDate = new Date(report.eventDate.replace(/\//g, '-'));
   if (!isNaN(parsedDate)) {
     const y = parsedDate.getFullYear();
     const m = ('0' + (parsedDate.getMonth() + 1)).slice(-2);
     const d = ('0' + parsedDate.getDate()).slice(-2);
     document.getElementById("edit-eventDate").value = `${y}-${m}-${d}`;
   } else {
-    // 変換できない場合は空欄に
     document.getElementById("edit-eventDate").value = "";
   }
 
@@ -447,6 +446,7 @@ function openEditForm(report) {
   document.getElementById("edit-comments").value = report.internalComments || "";
   document.getElementById("editModal").classList.add("show");
 }
+
 
 
 
