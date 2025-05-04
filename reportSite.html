@@ -222,12 +222,18 @@
 
   <script>
     let currentUserId = "";
+    let currentUserSite = "";
+    let currentNickname = "";
     let globalReports = [];
+
+
+
 
     liff.init({ liffId: "2007364105-ol986GKR" })
       .then(() => liff.getProfile())
       .then(profile => {
         currentUserId = profile.userId;
+        currentNickname = profile.displayName;
         loadReports();
       });
 
@@ -311,35 +317,43 @@
       document.getElementById("successModal").classList.remove("show");
     }
 
-    function submitEdit() {
-      const data = {
-        timestamp: document.getElementById("edit-timestamp").value,
-        eventDate: document.getElementById("edit-eventDate").value,
-        eventType: document.getElementById("edit-eventType").value,
-        adults: document.getElementById("edit-adults").value,
-        children: document.getElementById("edit-children").value,
-        internalComments: document.getElementById("edit-comments").value
-      };
+function submitEdit() {
+  const timestamp = document.getElementById("edit-timestamp").value;
+  const newDate = document.getElementById("edit-eventDate").value;
+  const newType = document.getElementById("edit-eventType").value;
+  const newAdults = document.getElementById("edit-adults").value;
+  const newChildren = document.getElementById("edit-children").value;
+  const newComment = document.getElementById("edit-comments").value;
 
-      document.getElementById("editLoadingMsg").style.display = "block";
+  document.getElementById("editLoadingMsg").style.display = "block";
 
-      fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ action: "updateReport", ...data })
-      })
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById("editLoadingMsg").style.display = "none";
-        closeEditModal();
-        showSuccessModal();
-        loadReports();
-      })
-      .catch(err => {
-        document.getElementById("editLoadingMsg").style.display = "none";
-        alert("更新エラー: " + err);
-      });
-    }
+  fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      action: "updateReport",
+      timestamp,
+      eventDate: newDate,
+      eventType: newType,
+      adults: newAdults,
+      children: newChildren,
+      internalComments: newComment,
+      siteName: currentUserSite,
+      nickname: currentNickname // ← new!
+    })
+  })
+  .then(res => res.json())
+  .then(res => {
+    document.getElementById("editLoadingMsg").style.display = "none";
+    showSuccessPopup("活動報告を更新しました");
+    closeEditModal();
+    updateReportList(globalReports);
+  })
+  .catch(err => {
+    alert("更新エラー: " + err);
+  });
+}
+
   </script>
 </body>
 </html>
