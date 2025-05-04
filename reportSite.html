@@ -165,27 +165,41 @@ let currentUserId = "";
 let currentUserSite = "";
 let globalReports = [];
     
+console.log("🚀 スクリプト開始");
+
 liff.init({ liffId: "2007364105-ol986GKR" })
-  .then(() => liff.getProfile())
+  .then(() => {
+    console.log("✅ LIFF 初期化成功");
+    return liff.getProfile();
+  })
   .then(profile => {
+    console.log("👤 LIFFプロフィール取得成功", profile);
     currentUserId = profile.userId;
-    return fetch("https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime());
+
+    // JSON取得開始
+    const jsonUrl = "https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime();
+    console.log("🌐 JSON取得URL:", jsonUrl);
+    return fetch(jsonUrl);
   })
   .then(res => {
-    if (!res.ok) throw new Error("JSON取得失敗");
+    console.log("📥 fetchレスポンス:", res.status);
+    if (!res.ok) throw new Error("❌ JSON取得失敗");
     return res.json();
   })
   .then(json => {
+    console.log("📦 JSON取得成功 レコード数:", json.length);
     const record = json.find(r => r.userId === currentUserId);
-    currentUserSite = record?.siteName || "不明";  // ← nullチェック＆フォールバック
+    currentUserSite = record?.siteName || "不明";
+    console.log("🏠 所属拠点:", currentUserSite);
     globalReports = json.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     initializeFilters(globalReports);
     updateReportList(globalReports);
   })
   .catch(error => {
-    console.error("初期化エラー:", error);
+    console.error("🚨 エラー発生:", error);
     document.getElementById("report-list").innerHTML = "データを取得できませんでした。<br>（LIFFまたはJSON読み込み失敗）";
   });
+
 
 
 
