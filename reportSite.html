@@ -424,12 +424,15 @@ function submitEdit() {
     console.log("📬 応答ステータス:", res.status);
     return res.json();
   })
-  .then(res => {
-    console.log("✅ 応答データ:", res);
-    alert(res.message);
-closeEditModal();
-    updateReportList(globalReports);
-  })
+
+    .then(res => {
+  console.log("✅ 応答データ:", res);
+  document.getElementById("editLoadingMsg").style.display = "none"; // ← ローディングも消す
+  showSuccessPopup("活動報告を更新しました");
+  closeEditModal();
+  updateReportList(globalReports);
+})
+
   .catch(err => {
     console.error("🚨 更新エラー:", err);
     alert("更新エラー: " + err);
