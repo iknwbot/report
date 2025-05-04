@@ -236,6 +236,7 @@
   <script>
     let currentUserId = "";
     let currentUserSite = "";
+    let currentNickname = "";
     let globalReports = [];
 
     console.log("🔥 script loaded");
@@ -246,8 +247,10 @@
         .then(() => {
           return liff.getProfile();
         })
-        .then(profile => {
-          currentUserId = profile.userId;
+        
+.then(profile => {
+  currentUserId = profile.userId;
+  currentNickname = profile.displayName;
 
           const siteUrl = `https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`;
           return fetch(siteUrl);
