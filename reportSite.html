@@ -249,20 +249,25 @@
 
   <div id="report-list">読み込み中...</div>
 
-  <div id="editModal" class="modal">
-    <div class="modal-content">
-      <h3>報告内容を修正しますか？</h3>
-      <input type="hidden" id="edit-timestamp">
-      <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
-      <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
-      <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
-      <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
-      <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
-      <button onclick="submitEdit()">更新する</button>
-      <button onclick="closeEditModal()">キャンセル</button>
-      <div id="editLoadingMsg" class="loading-msg" style="display: none;">お待ちください...</div>
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h3>報告内容を修正しますか？</h3>
+    <input type="hidden" id="edit-timestamp">
+    <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
+    <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
+    <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
+    <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
+    <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
+
+    <div class="modal-buttons">
+      <button class="submit-btn" onclick="submitEdit()">更新する</button>
+      <button class="cancel-btn" onclick="closeEditModal()">キャンセル</button>
     </div>
+
+    <div id="editLoadingMsg" class="loading-msg" style="display: none;">お待ちください...</div>
   </div>
+</div>
+
 
   <div id="successModal" class="modal">
     <div class="modal-content">
@@ -360,7 +365,7 @@
       document.getElementById("editModal").classList.remove("show");
     }
 
-    function showSuccessModal() {
+    function showSuccessPopup() {
   document.getElementById("successModal").classList.add("show");
 }
 
