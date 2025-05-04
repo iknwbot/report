@@ -171,6 +171,7 @@
 .modal-content input[type="date"],
 .modal-content textarea {
   width: 100%;
+  box-sizing: border-box;
   padding: 14px;
   font-size: 18px;
   border: 1px solid #ccc;
@@ -198,6 +199,13 @@
 
 .modal-content button:hover {
   background-color: #3e8e41;
+}
+
+.loading-msg {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  display: none;
 }
 
 
@@ -368,7 +376,23 @@ function closeEditModal() {
   return date.toISOString().split("T")[0];
 }
 
+function showSuccessPopup(message) {
+  const successModal = document.createElement("div");
+  successModal.classList.add("modal", "show");
+  successModal.innerHTML = `
+    <div class="modal-content">
+      <h3>✅ ${message}</h3>
+      <button onclick="closeSuccessPopup()">OK</button>
+    </div>`;
+  document.body.appendChild(successModal);
+}
 
+function closeSuccessPopup() {
+  const successModal = document.querySelector(".modal.show");
+  if (successModal) successModal.remove();
+}
+
+    
 function submitEdit() {
   console.log("🟢 submitEdit 実行");
 
@@ -380,6 +404,8 @@ function submitEdit() {
   const newComment = document.getElementById("edit-comments").value;
 
   console.log("📤 送信データ:", { timestamp, newDate, newType, newAdults, newChildren, newComment });
+
+  document.getElementById("editLoadingMsg").style.display = "block";
 
   fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
     method: "POST",
@@ -425,6 +451,8 @@ closeEditModal();
     <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
 
     <button type="button" onclick="submitEdit()">更新する</button>
+<div class="loading-msg" id="editLoadingMsg">お待ちください・・・</div>
+
   </div>
 </div>
 
