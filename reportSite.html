@@ -223,6 +223,15 @@
   background-color: #c0392b;
 }
 
+    .delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
 
     .loading-msg {
       color: #d00;
@@ -433,7 +442,7 @@ function confirmDelete() {
     closeEditModal();
     globalReports = globalReports.filter(r => r.timestamp !== deleteTargetTimestamp);
     updateReportList(globalReports);
-    showSuccessModal();
+    showSuccessPopup();
   })
   .catch(err => {
     alert("削除エラー: " + err);
