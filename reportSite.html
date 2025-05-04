@@ -194,7 +194,7 @@ liff.init({ liffId: "2007364105-ol986GKR" })
     currentUserId = profile.userId;
 
     // GAS 経由で siteName を取得
-    const siteUrl = `https://script.google.com/macros/s/YOUR_GAS_DEPLOY_URL/exec?userId=${currentUserId}`;
+ const siteUrl = `https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`;
     return fetch(siteUrl);
   })
   .then(res => res.json())
