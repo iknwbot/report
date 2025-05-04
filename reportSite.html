@@ -157,23 +157,18 @@
     console.log("🔥 script loaded");
 
     window.addEventListener('load', () => {
-      console.log("🌱 ページロード完了");
 
       liff.init({ liffId: "2007364105-ol986GKR" })
         .then(() => {
-          console.log("✅ LIFF 初期化成功");
           return liff.getProfile();
         })
         .then(profile => {
-          console.log("👤 プロフィール取得成功", profile);
           currentUserId = profile.userId;
 
           const siteUrl = `https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec?action=getSite&userId=${currentUserId}`;
-          console.log("🔍 拠点取得URL:", siteUrl);
           return fetch(siteUrl);
         })
         .then(res => {
-          console.log("📥 siteName取得レスポンス:", res.status);
           return res.json();
         })
         .then(data => {
@@ -182,15 +177,12 @@
           console.log("🏠 拠点名:", currentUserSite);
 
           const jsonUrl = "https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime();
-          console.log("🌐 JSON取得開始:", jsonUrl);
           return fetch(jsonUrl);
         })
         .then(res => {
-          console.log("📥 JSONレスポンス:", res.status);
           return res.json();
         })
         .then(json => {
-          console.log("📦 JSON取得成功:", json.length);
           globalReports = json.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
           initializeFilters(globalReports);
           updateReportList(globalReports);
