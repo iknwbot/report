@@ -275,21 +275,11 @@ function openEditForm(report) {
   }
 
   const form = document.getElementById("edit-form");
+  // ✅ 強制的に表示（重要ポイント）
+  form.style.setProperty("display", "block", "important");
+  console.log("✅ 強制的にdisplayをblockに設定");
 
-  const computed = window.getComputedStyle(form);
-console.log("🧪 computed display:", computed.display);
-console.log("🧪 computed visibility:", computed.visibility);
-console.log("🧪 computed opacity:", computed.opacity);
-console.log("🧪 computed z-index:", computed.zIndex);
-console.log("🧪 computed position:", computed.position);
-console.log("🧪 computed top:", computed.top);
-
-
-  // ✅ 編集フォームの表示確認ログ
-  form.style.display = "block";
-  console.log("✅ 編集フォームのdisplayを:", form.style.display);
-
-  // ✅ 値のセット
+  // 値のセット
   document.getElementById("edit-timestamp").value = report.timestamp;
   document.getElementById("edit-eventDate").value = report.eventDate || "";
   document.getElementById("edit-eventType").value = report.eventType || '';
