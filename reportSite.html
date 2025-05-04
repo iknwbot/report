@@ -172,9 +172,18 @@ window.addEventListener('load', () => {
   liff.init({ liffId: "2007364105-ol986GKR" })
     .then(() => {
       console.log("✅ LIFF 初期化成功");
+
+      // ログインしていなければログインさせる
+      if (!liff.isLoggedIn()) {
+        console.warn("🔒 ログインしていません。ログインを試行します...");
+        liff.login();
+        return;  // login() 後は再読み込みされるので処理をここで終了
+      }
+
       return liff.getProfile();
     })
     .then(profile => {
+      if (!profile) return;  // login() で抜けた後は profile なし
       console.log("👤 プロフィール取得成功", profile);
       currentUserId = profile.userId;
 
@@ -183,11 +192,13 @@ window.addEventListener('load', () => {
       return fetch(jsonUrl);
     })
     .then(res => {
+      if (!res) return;
       console.log("📥 fetchステータス:", res.status);
       if (!res.ok) throw new Error("❌ JSON取得失敗");
       return res.json();
     })
     .then(json => {
+      if (!json) return;
       console.log("📦 JSON取得成功 レコード数:", json.length);
       const record = json.find(r => r.userId === currentUserId);
       currentUserSite = record?.siteName || "不明";
@@ -201,6 +212,7 @@ window.addEventListener('load', () => {
       document.getElementById("report-list").innerHTML = "データを取得できませんでした。";
     });
 });
+
 
 
     async function loadReports() {
