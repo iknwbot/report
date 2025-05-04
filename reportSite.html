@@ -477,6 +477,7 @@ function openDeleteModal() {
 function closeDeleteModal() {
   document.getElementById("deleteConfirmModal").classList.remove("show");
 }
+
 function confirmDelete() {
   const deleteTargetTimestamp = document.getElementById("edit-timestamp").value;
   console.log("🔴 confirmDelete(): timestamp to delete = ", deleteTargetTimestamp);
@@ -503,9 +504,7 @@ function confirmDelete() {
     document.getElementById("deleteLoadingMsg").style.display = "none";
     closeDeleteModal();
     closeEditModal();
-    globalReports = globalReports.filter(r => r.timestamp !== deleteTargetTimestamp);
-    updateReportList(globalReports);
-    loadReports();
+    loadReports();  // ← 最新のJSONを再取得して表示更新
     showSuccessPopup("活動報告を削除しました");
   })
   .catch(err => {
@@ -513,6 +512,7 @@ function confirmDelete() {
     document.getElementById("deleteLoadingMsg").style.display = "none";
   });
 }
+
 
 
 
