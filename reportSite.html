@@ -141,6 +141,21 @@
 
   <div id="report-list">読み込み中...</div>
 
+  
+  <!-- 編集フォーム -->
+<div id="edit-form" style="display:none; margin-top:20px;">
+  <h2>報告内容の修正</h2>
+  <input type="hidden" id="edit-timestamp">
+  <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
+  <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
+  <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
+  <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
+  <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
+<button type="button" onclick="submitEdit()">更新する</button>
+<button type="button" onclick="cancelEdit()">キャンセル</button>
+
+</div>
+
   <!-- LIFF SDK & vConsole -->
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
@@ -246,13 +261,13 @@ const html = filteredReports.map(report => `
       <div class="report-message">参加人数: 大人${report.adults || 0}名 / 子ども${report.children || 0}名</div>
       <div class="report-message">コメント: ${report.internalComments}</div>
 
-      ${
-        (currentUserSite === "事務局" || currentUserSite === report.siteName)
-          ? `<div class="button-container">
-               <button class="edit-button" onclick="openEditForm('${report.timestamp}', '${(report.internalComments || '').replace(/'/g, "\\'")}')">修正する</button>
-             </div>`
-          : ""
-      }
+        ${
+          (currentUserSite === "事務局" || currentUserSite === report.siteName)
+            ? `<div class="button-container">
+                 <button class="edit-button" onclick='openEditForm(${JSON.stringify(report)})'>修正する</button>
+               </div>`
+            : ""
+        }
     </div>
   </div>
 `).join('');
@@ -260,31 +275,33 @@ const html = filteredReports.map(report => `
       document.getElementById("report-list").innerHTML = html || "該当する活動報告がありません。";
     }
 
-function openEditForm(timestamp, comment) {
-  console.log("🟢 openEditForm 開始", { timestamp, comment });
+function openEditForm(report) {
+  console.log("🟢 openEditForm 呼び出し:", report);
+  console.log("🔍 globalReports内のtimestampと一致するかチェック:", report.timestamp);
+  const found = globalReports.find(r => r.timestamp === report.timestamp);
+  console.log("🔍 マッチしたreport:", found);
 
-  const report = globalReports.find(r => r.timestamp === timestamp);
-  if (!report) {
-    console.warn("❌ 該当レコードが見つかりません:", timestamp);
+  if (!found) {
+    console.warn("❌ timestampが一致するレコードが見つかりません");
     return;
   }
 
   document.getElementById("edit-form").style.display = "block";
-  document.getElementById("edit-timestamp").value = timestamp;
+  document.getElementById("edit-timestamp").value = report.timestamp;
   document.getElementById("edit-eventDate").value = report.eventDate || "";
   document.getElementById("edit-eventType").value = report.eventType || '';
   document.getElementById("edit-adults").value = report.adults || 0;
   document.getElementById("edit-children").value = report.children || 0;
-  document.getElementById("edit-comments").value = comment || '';
+  document.getElementById("edit-comments").value = report.internalComments || '';
 
   console.log("✅ 編集フォームに値をセットしました");
 }
 
 
 
-    function cancelEdit() {
-      document.getElementById("edit-form").style.display = "none";
-    }
+function cancelEdit() {
+  document.getElementById("edit-form").style.display = "none";
+}
 
 function submitEdit() {
   console.log("🟢 submitEdit 実行");
@@ -319,30 +336,14 @@ function submitEdit() {
     console.log("✅ 応答データ:", res);
     alert(res.message);
     cancelEdit();
-    updateReportList(globalReports); // 再描画
+    updateReportList(globalReports);
   })
   .catch(err => {
     console.error("🚨 更新エラー:", err);
     alert("更新エラー: " + err);
   });
 }
-
-
-  </script>
-
-  <!-- 編集フォーム -->
-<div id="edit-form" style="display:none; margin-top:20px;">
-  <h2>報告内容の修正</h2>
-  <input type="hidden" id="edit-timestamp">
-  <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
-  <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
-  <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
-  <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
-  <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
-<button type="button" onclick="submitEdit()">更新する</button>
-<button type="button" onclick="cancelEdit()">キャンセル</button>
-
-</div>
+</script>
 
 </body>
 </html>
