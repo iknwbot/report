@@ -294,11 +294,13 @@ window.onerror = function(message, source, lineno, colno, error) {
           const jsonUrl = "https://raw.githubusercontent.com/iknwbot/report/main/data/internalReport.json?t=" + new Date().getTime();
           return fetch(jsonUrl);
         })
-        .then(res => {
-          return res.json();
-        })
-        .then(json => {
-globalReports = json;
+.then(res => {
+  console.log("📥 JSONレスポンス取得成功:", res);
+  return res.json();
+})
+.then(json => {
+  console.log("📦 JSONパース成功。データ件数:", json.length);
+  globalReports = json;
 
 
   // timestamp が有効かチェック
