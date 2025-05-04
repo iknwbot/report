@@ -410,20 +410,27 @@ liff.init({ liffId: "2007364105-ol986GKR" })
     }
 
 function openEditForm(report) {
-  console.log("🟡 openEditForm(): timestamp = ", report.timestamp);  // 確認ログ
+  document.getElementById("edit-timestamp").value = report.timestamp;
 
-  // 明示的に空チェックも含める
-  const ts = report.timestamp || "";
-  document.getElementById("edit-timestamp").value = ts;
+  // 日付が "YYYY/MM/DD HH:MM:SS" または "YYYY-MM-DD" のどちらでも扱えるように処理
+  let parsedDate = new Date(report.eventDate);
+  if (!isNaN(parsedDate)) {
+    const y = parsedDate.getFullYear();
+    const m = ('0' + (parsedDate.getMonth() + 1)).slice(-2);
+    const d = ('0' + parsedDate.getDate()).slice(-2);
+    document.getElementById("edit-eventDate").value = `${y}-${m}-${d}`;
+  } else {
+    // 変換できない場合は空欄に
+    document.getElementById("edit-eventDate").value = "";
+  }
 
-  document.getElementById("edit-eventDate").value = report.eventDate || "";
   document.getElementById("edit-eventType").value = report.eventType || "";
   document.getElementById("edit-adults").value = report.adults || "";
   document.getElementById("edit-children").value = report.children || "";
   document.getElementById("edit-comments").value = report.internalComments || "";
-
   document.getElementById("editModal").classList.add("show");
 }
+
 
 
     function closeEditModal() {
