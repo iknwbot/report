@@ -401,15 +401,22 @@ liff.init({ liffId: "2007364105-ol986GKR" })
       `).join('') || "該当する活動報告がありません。";
     }
 
-    function openEditForm(report) {
-      document.getElementById("edit-timestamp").value = report.timestamp;
-      document.getElementById("edit-eventDate").value = report.eventDate;
-      document.getElementById("edit-eventType").value = report.eventType;
-      document.getElementById("edit-adults").value = report.adults;
-      document.getElementById("edit-children").value = report.children;
-      document.getElementById("edit-comments").value = report.internalComments;
-      document.getElementById("editModal").classList.add("show");
-    }
+function openEditForm(report) {
+  console.log("🟡 openEditForm(): timestamp = ", report.timestamp);  // 確認ログ
+
+  // 明示的に空チェックも含める
+  const ts = report.timestamp || "";
+  document.getElementById("edit-timestamp").value = ts;
+
+  document.getElementById("edit-eventDate").value = report.eventDate || "";
+  document.getElementById("edit-eventType").value = report.eventType || "";
+  document.getElementById("edit-adults").value = report.adults || "";
+  document.getElementById("edit-children").value = report.children || "";
+  document.getElementById("edit-comments").value = report.internalComments || "";
+
+  document.getElementById("editModal").classList.add("show");
+}
+
 
     function closeEditModal() {
       document.getElementById("editModal").classList.remove("show");
