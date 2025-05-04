@@ -268,48 +268,70 @@ const html = filteredReports.map(report => `
       document.getElementById("report-list").innerHTML = html || "該当する活動報告がありません。";
     }
 
-    function openEditForm(timestamp, comment) {
-      document.getElementById("edit-form").style.display = "block";
-      document.getElementById("edit-timestamp").value = timestamp;
-      document.getElementById("edit-comments").value = comment;
-    }
+function openEditForm(timestamp, comment) {
+  const report = globalReports.find(r => r.timestamp === timestamp);
+  if (!report) return;
+
+  document.getElementById("edit-form").style.display = "block";
+  document.getElementById("edit-timestamp").value = timestamp;
+  document.getElementById("edit-eventDate").value = report.eventDate;
+  document.getElementById("edit-eventType").value = report.eventType || '';
+  document.getElementById("edit-adults").value = report.adults || 0;
+  document.getElementById("edit-children").value = report.children || 0;
+  document.getElementById("edit-comments").value = comment || '';
+}
+
 
     function cancelEdit() {
       document.getElementById("edit-form").style.display = "none";
     }
 
-    function submitEdit() {
-      const timestamp = document.getElementById("edit-timestamp").value;
-      const newComment = document.getElementById("edit-comments").value;
+function submitEdit() {
+  const timestamp = document.getElementById("edit-timestamp").value;
+  const newDate = document.getElementById("edit-eventDate").value;
+  const newType = document.getElementById("edit-eventType").value;
+  const newAdults = document.getElementById("edit-adults").value;
+  const newChildren = document.getElementById("edit-children").value;
+  const newComment = document.getElementById("edit-comments").value;
 
-      fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          action: "updateReport",
-          timestamp,
-          internalComments: newComment
-        })
-      })
-      .then(res => res.json())
-      .then(res => {
-        alert(res.message);
-        cancelEdit();
-        updateReportList(globalReports); // 再描画
-      })
-      .catch(err => {
-        alert("更新エラー: " + err);
-      });
-    }
+  fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      action: "updateReport",
+      timestamp,
+      eventDate: newDate,
+      eventType: newType,
+      adults: newAdults,
+      children: newChildren,
+      internalComments: newComment
+    })
+  })
+  .then(res => res.json())
+  .then(res => {
+    alert(res.message);
+    cancelEdit();
+    updateReportList(globalReports); // 再描画
+  })
+  .catch(err => {
+    alert("更新エラー: " + err);
+  });
+}
+
   </script>
 
   <!-- 編集フォーム -->
-  <div id="edit-form" style="display:none; margin-top:20px;">
-    <h2>報告内容の修正</h2>
-    <input type="hidden" id="edit-timestamp">
-    <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
-    <button onclick="submitEdit()">更新する</button>
-    <button onclick="cancelEdit()">キャンセル</button>
-  </div>
+<div id="edit-form" style="display:none; margin-top:20px;">
+  <h2>報告内容の修正</h2>
+  <input type="hidden" id="edit-timestamp">
+  <label>活動日:<br><input type="date" id="edit-eventDate"></label><br>
+  <label>開催タイプ:<br><input type="text" id="edit-eventType"></label><br>
+  <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
+  <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
+  <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
+  <button onclick="submitEdit()">更新する</button>
+  <button onclick="cancelEdit()">キャンセル</button>
+</div>
+
 </body>
 </html>
