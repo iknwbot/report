@@ -411,41 +411,40 @@ function submitEdit() {
 
   document.getElementById("editLoadingMsg").style.display = "block";
 
-  fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-body: new URLSearchParams({
-  action: "updateReport",
-  timestamp,
-  eventDate: newDate,
-  eventType: newType,
-  adults: newAdults,
-  children: newChildren,
-  internalComments: newComment,
-  siteName: currentUserSite,
-  nickname: currentNickname
+fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
+  method: "POST",
+  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  body: new URLSearchParams({
+    action: "updateReport",
+    timestamp,
+    eventDate: newDate,
+    eventType: newType,
+    adults: newAdults,
+    children: newChildren,
+    internalComments: newComment,
+    siteName: currentUserSite,
+    nickname: currentNickname
+  })
 })
-
-    })
-  })
-  .then(res => {
-    console.log("📬 応答ステータス:", res.status);
-    return res.json();
-  })
-
-    .then(res => {
+.then(res => {
+  console.log("📬 応答ステータス:", res.status);
+  return res.json();
+})
+.then(res => {
   console.log("✅ 応答データ:", res);
-  document.getElementById("editLoadingMsg").style.display = "none"; // ← ローディングも消す
+  document.getElementById("editLoadingMsg").style.display = "none";
   showSuccessPopup("活動報告を更新しました");
   closeEditModal();
   updateReportList(globalReports);
 })
+.catch(err => {
+  console.error("🚨 更新エラー:", err);
+  alert("更新エラー: " + err);
+});
 
-  .catch(err => {
-    console.error("🚨 更新エラー:", err);
-    alert("更新エラー: " + err);
-  });
-}
+
+
+  
 </script>
   <!-- 編集フォーム -->
 <!-- 編集モーダル -->
