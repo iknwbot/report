@@ -291,6 +291,9 @@
     </div>
 
     <div id="editLoadingMsg" class="loading-msg" style="display: none;">お待ちください...</div>
+    <div id="deleteLoadingMsg" class="loading-msg" style="display: none;">お待ちください...</div>
+
+    
   </div>
 </div>
 
@@ -406,10 +409,13 @@ liff.init({ liffId: "2007364105-ol986GKR" })
     function closeEditModal() {
       document.getElementById("editModal").classList.remove("show");
     }
-
-    function showSuccessPopup() {
-  document.getElementById("successModal").classList.add("show");
+    
+function showSuccessPopup(message) {
+  const modal = document.getElementById("successModal");
+  modal.querySelector("h3").innerText = `✅ ${message}`;
+  modal.classList.add("show");
 }
+
 
     function closeSuccessModal() {
       document.getElementById("successModal").classList.remove("show");
@@ -427,6 +433,7 @@ function closeDeleteModal() {
 }
 
 function confirmDelete() {
+  document.getElementById("deleteLoadingMsg").style.display = "block";
   fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -437,12 +444,13 @@ function confirmDelete() {
   })
   .then(res => res.json())
   .then(res => {
+    document.getElementById("deleteLoadingMsg").style.display = "none";
     console.log("✅ 削除成功", res);
     closeDeleteModal();
     closeEditModal();
     globalReports = globalReports.filter(r => r.timestamp !== deleteTargetTimestamp);
     updateReportList(globalReports);
-    showSuccessPopup();
+showSuccessPopup("活動報告を削除しました");
   })
   .catch(err => {
     alert("削除エラー: " + err);
@@ -459,6 +467,7 @@ function submitEdit() {
   const newComment = document.getElementById("edit-comments").value;
 
   document.getElementById("editLoadingMsg").style.display = "block";
+  
 
   fetch("https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec", {
     method: "POST",
