@@ -341,6 +341,9 @@ window.onerror = function(message, source, lineno, colno, error) {
     }
 
     function updateReportList(reports) {
+        console.log("📝 updateReportList() 呼び出し");
+  console.log("📄 レポート件数:", reports.length);
+  console.log("📄 最初のレポート:", reports[0]);
       const monthFilter = document.getElementById("monthFilter").value;
       const siteFilter = document.getElementById("siteFilter").value;
 
