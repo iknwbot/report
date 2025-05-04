@@ -547,7 +547,7 @@ function submitEdit() {
     document.getElementById("editLoadingMsg").style.display = "none";
     showSuccessPopup("活動報告を更新しました");
     closeEditModal();
-    updateReportList(globalReports);
+loadReports(); 
   })
   .catch(err => {
     alert("更新エラー: " + err);
