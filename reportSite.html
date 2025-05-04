@@ -390,7 +390,12 @@ liff.init({ liffId: "2007364105-ol986GKR" })
             <div class="report-message">開催タイプ: ${r.eventType}</div>
             <div class="report-message">参加人数: 大人${r.adults}名 / 子ども${r.children}名</div>
             <div class="report-message">コメント: ${r.internalComments}</div>
-            ${r.userId === currentUserId ? `<div class="button-container"><button class="edit-button" onclick='openEditForm(${JSON.stringify(r)})'>変更</button></div>` : ''}
+            ${
+  currentUserSite === "事務局" || r.siteName === currentUserSite
+    ? `<div class="button-container"><button class="edit-button" onclick='openEditForm(${JSON.stringify(r)})'>変更</button></div>`
+    : ''
+}
+
           </div>
         </div>
       `).join('') || "該当する活動報告がありません。";
