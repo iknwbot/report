@@ -208,8 +208,6 @@
   display: none;
 }
 
-
-    
   </style>
 </head>
 <body>
@@ -221,9 +219,6 @@
   </div>
 
   <div id="report-list">読み込み中...</div>
-
-  
-
 
   <!-- LIFF SDK & vConsole -->
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -340,27 +335,31 @@ const html = filteredReports.map(report => `
       <div class="report-message">参加人数: 大人${report.adults || 0}名 / 子ども${report.children || 0}名</div>
       <div class="report-message">コメント: ${report.internalComments}</div>
 
-
-
-
-
-
-        ${
-          (currentUserSite === "事務局" || currentUserSite === report.siteName)
-            ? `<div class="button-container">
-              <button class="edit-button" 
-        onclick='openEditForm(JSON.parse(decodeURIComponent("${encodeURIComponent(JSON.stringify(report))}")))'>
-  修正する
-</button>
-               </div>`
-            : ""
-        }
-    </div>
+    ${
+      (currentUserSite === "事務局" || currentUserSite === report.siteName)
+        ? `<div class="button-container">
+             <button class="edit-button" data-report='${encodeURIComponent(JSON.stringify(report))}' onclick='handleEditClick(this)'>
+               修正する
+             </button>
+           </div>`
+        : ""
+    }
   </div>
 `).join('');
 
       document.getElementById("report-list").innerHTML = html || "該当する活動報告がありません。";
     }
+
+function handleEditClick(button) {
+  try {
+    const encoded = button.getAttribute("data-report");
+    const report = JSON.parse(decodeURIComponent(encoded));
+    openEditForm(report);
+  } catch (e) {
+    console.error("❌ 編集データの取得エラー:", e);
+  }
+}
+
 
 function openEditForm(report) {
   console.log("🟢 openEditForm 呼び出し:", report);
