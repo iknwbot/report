@@ -5,10 +5,10 @@
     "nickname": "Jumps",
     "siteName": "事務局",
     "siteURL": "",
-    "eventDate": "2025/05/05 00:00:00",
+    "eventDate": "2025-05-05",
     "eventType": "子ども食堂＆フードパントリー",
-    "adults": 2,
-    "children": 2,
+    "adults": 20,
+    "children": 20,
     "internalComments": "テストテストテストテストテストテ",
     "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1746423303964.jpg"
   },
