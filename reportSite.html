@@ -415,6 +415,9 @@ async function loadReports() {
     return (month === "all" || m === month) && (site === "all" || r.siteName === site);
   });
 
+     //開催日が新しい順にソート
+  filtered.sort((a, b) => new Date(b.eventDate) - new Date(a.eventDate));
+     
   if (filtered.length === 0) {
     listEl.innerHTML = "該当する活動報告がありません。";
     return;
