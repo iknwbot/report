@@ -556,6 +556,7 @@ function submitEdit() {
     body: new URLSearchParams({
       action: "updateReport",
       timestamp,
+      userId: currentUserId,
       eventDate: newDate,
       eventType: newType,
       adults: newAdults,
