@@ -5,11 +5,11 @@
     "nickname": "Jumps",
     "siteName": "いちいちいちパントリー",
     "siteURL": "https://fs-ichikawa.org/ichikawafoodbank/",
-    "eventDate": "2025/05/10 00:00:00",
-    "eventType": "フードパントリー",
-    "adults": 20,
-    "children": 20,
-    "internalComments": "テストテストテストテスト",
+    "eventDate": "2025-05-01T00:00:00.000Z",
+    "eventType": "子ども食堂＆フードパントリー",
+    "adults": 10,
+    "children": 10,
+    "internalComments": "テストテストテストテストあかさたな",
     "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1746430177819.jpg"
   },
   {
