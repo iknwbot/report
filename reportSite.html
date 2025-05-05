@@ -401,6 +401,9 @@ liff.init({ liffId: "2007364105-ol986GKR" })
     }
 
     function updateReportList(reports) {
+        const listEl = document.getElementById("report-list");
+  listEl.innerHTML = "";  // ★← これで前の内容を必ず消す！
+      
       const month = document.getElementById("monthFilter").value;
       const site = document.getElementById("siteFilter").value;
       const filtered = reports.filter(r => {
