@@ -48,18 +48,19 @@
       max-width: 400px;
     }
 
-    .report-item {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-    }
+.report-item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 15px 20px; /* ← 左右にもpadding */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
 
     .report-item:hover {
       transform: scale(1.02);
@@ -73,10 +74,13 @@
       border-radius: 5px;
     }
 
-    .report-text {
-      flex: 1;
-      margin-left: 0;
-    }
+.report-text {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
 
     .report-header {
       font-size: 14px;
