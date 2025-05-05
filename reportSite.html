@@ -400,36 +400,46 @@ liff.init({ liffId: "2007364105-ol986GKR" })
       siteFilter.onchange = () => updateReportList(globalReports);
     }
 
-    function updateReportList(reports) {
-        const listEl = document.getElementById("report-list");
-  listEl.innerHTML = "";  // ★← これで前の内容を必ず消す！
-      
-      const month = document.getElementById("monthFilter").value;
-      const site = document.getElementById("siteFilter").value;
-      const filtered = reports.filter(r => {
-        const date = new Date(r.eventDate);
-        const m = `${date.getFullYear()}年${("0" + (date.getMonth() + 1)).slice(-2)}月`;
-        return (month === "all" || m === month) && (site === "all" || r.siteName === site);
-      });
-      document.getElementById("report-list").innerHTML = filtered.map(r => `
-        <div class="report-item">
-          ${r.githubUrl ? `<img src="${r.githubUrl}" class="report-image">` : ''}
-          <div class="report-text">
-            <div class="report-header">活動報告<span class="report-date">${formatDate(r.eventDate)}</span></div>
-            <div class="report-title"><a href="${r.siteURL}" target="_blank">${r.siteName}</a></div>
-            <div class="report-message">開催タイプ: ${r.eventType}</div>
-            <div class="report-message">参加人数: 大人${r.adults}名 / 子ども${r.children}名</div>
-            <div class="report-message">コメント: ${r.internalComments}</div>
-            ${
-  currentUserSite === "事務局" || r.siteName === currentUserSite
-    ? `<div class="button-container"><button class="edit-button" onclick='openEditForm(${JSON.stringify(r)})'>変更</button></div>`
-    : ''
+   function updateReportList(reports) {
+  const listEl = document.getElementById("report-list");
+  listEl.innerHTML = "";  // ← OK
+
+  const month = document.getElementById("monthFilter").value;
+  const site = document.getElementById("siteFilter").value;
+
+  const filtered = reports.filter(r => {
+    const date = new Date(r.eventDate);
+    const m = `${date.getFullYear()}年${("0" + (date.getMonth() + 1)).slice(-2)}月`;
+    return (month === "all" || m === month) && (site === "all" || r.siteName === site);
+  });
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = "該当する活動報告がありません。";
+    return;
+  }
+
+  filtered.forEach(r => {
+    const item = document.createElement("div");
+    item.className = "report-item";
+    item.innerHTML = `
+      ${r.githubUrl ? `<img src="${r.githubUrl}" class="report-image">` : ""}
+      <div class="report-text">
+        <div class="report-header">活動報告<span class="report-date">${formatDate(r.eventDate)}</span></div>
+        <div class="report-title"><a href="${r.siteURL}" target="_blank">${r.siteName}</a></div>
+        <div class="report-message">開催タイプ: ${r.eventType}</div>
+        <div class="report-message">参加人数: 大人${r.adults}名 / 子ども${r.children}名</div>
+        <div class="report-message">コメント: ${r.internalComments}</div>
+        ${
+          currentUserSite === "事務局" || r.siteName === currentUserSite
+            ? `<div class="button-container"><button class="edit-button" onclick='openEditForm(${JSON.stringify(r)})'>変更</button></div>`
+            : ''
+        }
+      </div>
+    `;
+    listEl.appendChild(item);
+  });
 }
 
-          </div>
-        </div>
-      `).join('') || "該当する活動報告がありません。";
-    }
 
 function openEditForm(report) {
   document.getElementById("edit-timestamp").value = report.timestamp;
