@@ -366,32 +366,22 @@ liff.init({ liffId: "2007364105-ol986GKR" })
 
 
 async function loadReports() {
-  const url = "https://api.github.com/repos/iknwbot/report/contents/data/internalReport.json";
-  const token = "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";  
+  const url = "https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec";
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
+  const response = await fetch(url);
+  const json = await response.json();
 
-  if (!response.ok) {
-    console.error("❌ JSON取得エラー:", await response.text());
+  if (json.error) {
+    console.error("❌ JSON取得エラー:", json.error);
     document.getElementById("report-list").innerHTML = "読み込みエラーが発生しました";
     return;
   }
 
-  const result = await response.json();
-
-  // base64デコード
-  const decoded = atob(result.content);
-  const reports = JSON.parse(decoded);
-
-  reports.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-  globalReports = reports;
-  initializeFilters(reports);
-  updateReportList(reports);
+  globalReports = json;
+  initializeFilters(json);
+  updateReportList(json);
 }
+
 
 
     function formatDate(dateString) {
