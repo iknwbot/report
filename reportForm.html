@@ -198,23 +198,31 @@ document.getElementById("confirmSubmit").addEventListener("click", async () => {
     let result;
     try {
       result = JSON.parse(resultText);
-    } catch (e) {
-      alert("レスポンスが不正です: " + resultText);
-      return;
-    }
+  } catch (e) {
+    alert("レスポンスが不正です: " + resultText);
+    document.getElementById("loadingMsg").style.display = "none";
+    document.getElementById("confirmSubmit").disabled = false; // エラー時も再有効化
+    return;
+  }
 
-    if (result.status === "success") {
-      document.getElementById("loadingMsg").style.display = "none";
-      showSuccessPopup("活動報告が完了しました。投稿されたらLINEで通知します。");
-      closeModal();
-      document.getElementById("reportForm").reset();
-    } else {
-      alert("エラーが発生しました: " + result.message);
-      document.getElementById("loadingMsg").style.display = "none";
-    }
+  if (result.status === "success") {
+    document.getElementById("loadingMsg").style.display = "none";
+    document.getElementById("confirmSubmit").disabled = false; // ボタンを再有効化
+    showSuccessPopup("活動報告が完了しました。投稿されたらLINEで通知します。");
+    closeModal();
+    document.getElementById("reportForm").reset();
+    document.querySelector(".file-name").textContent = "未選択"; // ファイル名もリセット
+    document.getElementById("confirmImagePreview").innerHTML = ""; // 画像プレビューもクリア
+    imageBase64 = ""; // 画像データもリセット
+  } else {
+    alert("エラーが発生しました: " + result.message);
+    document.getElementById("loadingMsg").style.display = "none";
+    document.getElementById("confirmSubmit").disabled = false; // エラー時も再有効化
+  }
   } catch (err) {
     alert("送信に失敗しました: " + err.message);
     document.getElementById("loadingMsg").style.display = "none";
+    document.getElementById("confirmSubmit").disabled = false; // エラー時も再有効化
   }
 });
 
@@ -235,9 +243,10 @@ function closeSuccessPopup() {
   if (successModal) successModal.remove();
 }
 
-function closeModal() {
-  document.getElementById("confirmationModal").style.display = "none";
-}
+  function closeModal() {
+    document.getElementById("confirmationModal").style.display = "none";
+    document.getElementById("confirmSubmit").disabled = false; // モーダルを閉じた時も再有効化
+  }
 </script>
 
 </body>
