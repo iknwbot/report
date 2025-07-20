@@ -195,6 +195,10 @@ document.getElementById("confirmSubmit").addEventListener("click", async () => {
     imageBase64: imageBase64
   });
 
+  // デバッグログ - フロントエンド
+  console.log("🔥 Sending report with staff:", document.getElementById("staff").value);
+  console.log("🔥 Full formData:", Object.fromEntries(formData.entries()));
+
   try {
     const response = await fetch(BACKEND_URL, {
       method: "POST",
