@@ -306,6 +306,7 @@
     </label><br>
     <label>参加人数（大人）:<br><input type="number" id="edit-adults" min="0"></label><br>
     <label>参加人数（子ども）:<br><input type="number" id="edit-children" min="0"></label><br>
+    <label>参加人数（スタッフ）:<br><input type="number" id="edit-staff" min="0"></label><br>
     <label>コメント:<br><textarea id="edit-comments" rows="4" cols="50"></textarea></label><br>
 
     <div class="modal-buttons">
@@ -436,7 +437,7 @@ async function loadReports() {
         <div class="report-header">活動報告<span class="report-date">${formatDate(r.eventDate)}</span></div>
         <div class="report-title"><a href="${r.siteURL}" target="_blank">${r.siteName}</a></div>
         <div class="report-message">開催タイプ: ${r.eventType}</div>
-        <div class="report-message">参加人数: 大人${r.adults}名 / 子ども${r.children}名</div>
+        <div class="report-message">参加人数: 大人${r.adults}名 / 子ども${r.children}名 / スタッフ${r.staff || 0}名</div>
         <div class="report-message">コメント: ${r.internalComments}</div>
         ${
           currentUserSite === "事務局" || r.siteName === currentUserSite
@@ -467,6 +468,7 @@ function openEditForm(report) {
   document.getElementById("edit-eventType").value = report.eventType || "";
   document.getElementById("edit-adults").value = report.adults || "";
   document.getElementById("edit-children").value = report.children || "";
+  document.getElementById("edit-staff").value = report.staff || "";
   document.getElementById("edit-comments").value = report.internalComments || "";
   document.getElementById("editModal").classList.add("show");
 }
@@ -544,6 +546,7 @@ function submitEdit() {
   const newType = document.getElementById("edit-eventType").value;
   const newAdults = document.getElementById("edit-adults").value;
   const newChildren = document.getElementById("edit-children").value;
+  const newStaff = document.getElementById("edit-staff").value;
   const newComment = document.getElementById("edit-comments").value;
 
   document.getElementById("editLoadingMsg").style.display = "block";
@@ -560,6 +563,7 @@ function submitEdit() {
       eventType: newType,
       adults: newAdults,
       children: newChildren,
+      staff: newStaff,
       internalComments: newComment,
       siteName: currentUserSite,
       nickname: currentNickname // ← new!
