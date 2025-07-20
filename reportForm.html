@@ -40,6 +40,9 @@
   <label for="children">参加人数（子ども）:</label>
   <input type="number" id="children" min="0" required />
 
+  <label for="staff">参加人数（スタッフ）:</label>
+  <input type="number" id="staff" min="0" required />
+
   <label for="internalComments">コメント:</label>
   <textarea id="internalComments" placeholder="NW内部に共有したい気づきなどコメントを記入" required></textarea>
 
@@ -63,6 +66,7 @@
     <div class="preview-item"><b>開催タイプ:</b> <span id="confirmEventType"></span></div>
     <div class="preview-item"><b>大人:</b> <span id="confirmAdults"></span></div>
     <div class="preview-item"><b>子ども:</b> <span id="confirmChildren"></span></div>
+    <div class="preview-item"><b>スタッフ:</b> <span id="confirmStaff"></span></div>
     <div class="preview-item"><b>コメント:</b> <span id="confirmInternalComments"></span></div>
     <div id="confirmImagePreview"></div>
     <button id="confirmSubmit">確定</button>
@@ -137,6 +141,7 @@ document.getElementById("submitReport").addEventListener("click", () => {
   const eventType = document.getElementById("eventType").value;
   const adults = document.getElementById("adults").value;
   const children = document.getElementById("children").value;
+  const staff = document.getElementById("staff").value;
   const internalComments = document.getElementById("internalComments").value;
 
   const errorEl = document.getElementById("formError");
@@ -147,6 +152,7 @@ document.getElementById("submitReport").addEventListener("click", () => {
   if (!eventType) missingFields.push("開催タイプ");
   if (!adults) missingFields.push("参加人数（大人）");
   if (!children) missingFields.push("参加人数（子ども）");
+  if (!staff) missingFields.push("参加人数（スタッフ）");
   if (!internalComments) missingFields.push("コメント");
 
   if (missingFields.length > 0) {
@@ -164,6 +170,7 @@ document.getElementById("submitReport").addEventListener("click", () => {
   document.getElementById("confirmEventType").textContent = eventType;
   document.getElementById("confirmAdults").textContent = adults;
   document.getElementById("confirmChildren").textContent = children;
+  document.getElementById("confirmStaff").textContent = staff;
   document.getElementById("confirmInternalComments").textContent = internalComments;
 
   document.getElementById("confirmationModal").style.display = "flex";
@@ -183,6 +190,7 @@ document.getElementById("confirmSubmit").addEventListener("click", async () => {
     eventType: document.getElementById("eventType").value,
     adults: document.getElementById("adults").value,
     children: document.getElementById("children").value,
+    staff: document.getElementById("staff").value,
     internalComments: document.getElementById("internalComments").value,
     imageBase64: imageBase64
   });
