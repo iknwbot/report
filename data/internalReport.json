@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/07/21 14:11:06",
+    "userId": "Ud1c5a403096521fd73a8c8498a63058c",
+    "nickname": "ササキ トシキ",
+    "siteName": "新田こども食堂",
+    "siteURL": "",
+    "eventDate": "2025/06/28 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 2,
+    "children": 5,
+    "staff": 5,
+    "internalComments": "はじめまして。新田こども食堂｢ぽけっと23｣です。初回実施には数名の方々に来ていただき、先ずはホッとしています。\n何より、皆さんが思い思いにゲームをしたり、おしゃべりをしたり、時間の最後まで楽しそうに過ごしていただけたことに感謝、そして嬉しく感じています。\nこれからも、こども・大人の別なく｢好きな自分で居られる場所｣｢好きな自分に戻れる場所｣として、安らげるスペースづくりを目指していきたいと思います。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1753074669624.jpg"
+  },
+  {
     "timestamp": "2025/07/21 08:00:16",
     "userId": "Ud1e26db5002c62d4e93b08e835915b30",
     "nickname": "加藤英一",
