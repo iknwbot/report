@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/08/02 14:17:41",
+    "userId": "U3d3ae8004db8b7e9c71f4863488f8ef7",
+    "nickname": "あつこ",
+    "siteName": "東菅野つなぐ食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E6%9D%B1%E8%8F%85%E9%87%8E%E3%81%A4%E3%81%AA%E3%81%90%E9%A3%9F%E5%A0%82-home/",
+    "eventDate": "2025/08/02 00:00:00",
+    "eventType": "フードパントリー",
+    "adults": 9,
+    "children": 8,
+    "staff": 11,
+    "internalComments": "台風懸念のためカレー会食は中止し、フードパントリーと遊びの広場のみとしました。ボランティアの方がたくさん来てくれました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1754111862103.jpg"
+  },
+  {
     "timestamp": "2025/08/01 11:18:00",
     "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
     "nickname": "岡本一也",
