@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/08/10 11:30:30",
+    "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
+    "nickname": "masayoaizawa",
+    "siteName": "市川大野こども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%A4%A7%E9%87%8E%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2025/08/09 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 10,
+    "staff": 8,
+    "internalComments": "ピザーラさんのピザを昼食にいただき、食後には、むすびえさん経由でいただいた工作キットを作ったり、夏祭り遊びをしたりしました。\n当日キャンセルもあり、こどもは少なめでしたが、予定外の寄付や分量にも対応する余裕ができました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1754793030894.jpg"
+  },
+  {
     "timestamp": "2025/08/09 16:25:50",
     "userId": "U9164b748f9318182d77c6b371181d47b",
     "nickname": "やすこ",
