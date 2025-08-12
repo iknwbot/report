@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/08/12 23:44:52",
+    "userId": "Uf0024d2eb975a88feb279321d8b00300",
+    "nickname": "たにぐちのり",
+    "siteName": "鬼越つなぐ食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E9%AC%BC%E8%B6%8A%E3%81%A4%E3%81%AA%E3%81%90%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2025/08/08 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 19,
+    "children": 31,
+    "staff": 5,
+    "internalComments": "夏休みのせいか訪問が少なく、お弁当が余りました、余った弁当はスタッフで買い取りをしました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1755009892450.jpg"
+  },
+  {
     "timestamp": "2025/08/11 14:54:11",
     "userId": "Ua4d32c051c6ae99545c86d94615d0c14",
     "nickname": "石原田 和穂",
