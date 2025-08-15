@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/08/15 09:38:15",
+    "userId": "U585207e9cedef89bb7ba052b21f32346",
+    "nickname": "金子紀子",
+    "siteName": "子ども食堂「だれでも」",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%82%82%E3%81%90%E3%82%82%E3%81%90%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB/",
+    "eventDate": "2025/08/09 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 11,
+    "children": 6,
+    "staff": 5,
+    "internalComments": "3連休初日だったためか参加者が少なかった。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2025/08/13 16:05:51",
     "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
     "nickname": "岡本一也",
