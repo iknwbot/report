@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/08/18 18:29:19",
+    "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2025/07/31 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 1,
+    "children": 4,
+    "staff": 2,
+    "internalComments": "人数が少なく、ゆったりボーリングしたり好きなことをして過ごしました",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1755509359808.jpg"
+  },
+  {
     "timestamp": "2025/08/18 18:28:13",
     "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
     "nickname": "mika",
