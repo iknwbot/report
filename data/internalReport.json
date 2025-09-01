@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/09/01 11:41:33",
+    "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2025/08/07 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 7,
+    "children": 12,
+    "staff": 9,
+    "internalComments": "昭和学院の郊外交流部のみなさんにご協力いただき、ボランティアをしてくれました。元気な学生さんたちと共にこども食堂を開催し、とてもパワフルで子どもたちもイキイキと楽しそうな時間を過ごしました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1756694493557.jpg"
+  },
+  {
     "timestamp": "2025/08/31 13:51:26",
     "userId": "Ueb1577b340e2d638066d422b08760f0a",
     "nickname": "清水誠",
