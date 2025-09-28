@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/09/28 08:47:13",
+    "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
+    "nickname": "masayoaizawa",
+    "siteName": "市川大野こども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%A4%A7%E9%87%8E%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2025/09/27 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 3,
+    "children": 9,
+    "staff": 8,
+    "internalComments": "『じゃがりこ』をお湯でふやかして作ったポテサラなどを使ったセルフサンドイッチ。調理や会食の時間は短くて済み、こちらはありがたかったのですが、外国籍の方がじゃがりこポテサラに抵抗があった様子でした。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1759016834067.jpg"
+  },
+  {
     "timestamp": "2025/09/27 22:56:48",
     "userId": "Ubb6959ae28524f5a3f4f73b075ac9546",
     "nickname": "古澤とき子",
