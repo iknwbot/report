@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/10/31 03:41:58",
+    "userId": "U6855c7437c873ac5f098429300d0604f",
+    "nickname": "渡邉（大橋）裕美",
+    "siteName": "行徳子ども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E8%A1%8C%E5%BE%B3%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82-%E8%A1%8C%E5%BE%B3%E6%94%AF%E6%89%80/",
+    "eventDate": "2025/10/09 00:00:00",
+    "eventType": "子ども食堂＆フードパントリー",
+    "adults": 35,
+    "children": 36,
+    "staff": 13,
+    "internalComments": "特に告知を強化したわけでもないが、前月に比べ参加者が多かった。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1761849719097.jpg"
+  },
+  {
     "timestamp": "2025/10/30 21:40:43",
     "userId": "Ud1e26db5002c62d4e93b08e835915b30",
     "nickname": "加藤英一",
