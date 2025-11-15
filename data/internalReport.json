@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/11/15 12:42:46",
+    "userId": "U585207e9cedef89bb7ba052b21f32346",
+    "nickname": "金子紀子",
+    "siteName": "子ども食堂「だれでも」",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%82%82%E3%81%90%E3%82%82%E3%81%90%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB/",
+    "eventDate": "2025/10/23 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 28,
+    "children": 30,
+    "staff": 8,
+    "internalComments": "報告を忘れていたようです。すみません。\n第四木曜日にしては月末が遠かったため、勘違いでお弁当を取りに来ない利用者が3件もあった。今後の対策が必要です。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2025/11/15 12:06:10",
     "userId": "Ua23d544db2eddee34d361204337a2e1b",
     "nickname": "ほたママ(かとちゃん)",
