@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/11/30 19:51:37",
+    "userId": "U05dcb1d92376e2c1d9872dd18e4fc69b",
+    "nickname": "えじそん",
+    "siteName": "わいわい食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%82%8F%E3%81%84%E3%82%8F%E3%81%84%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2025/11/30 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 7,
+    "staff": 6,
+    "internalComments": "先月同様、記憶障害の青森さんがいらっしゃいました。全体的に少ない日でした。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2025/11/28 20:55:51",
     "userId": "U052d76a9047f0650faefd166d9503d40",
     "nickname": "プラット",
