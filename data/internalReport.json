@@ -5,12 +5,12 @@
     "nickname": "アブ",
     "siteName": "そやの和",
     "siteURL": "",
-    "eventDate": "2025/11/08 00:00:00",
+    "eventDate": "2025-11-08",
     "eventType": "子ども食堂（会食）",
-    "adults": 33,
-    "children": 34,
-    "staff": 17,
-    "internalComments": "3回目にして、大人も子どもも最多人数でした。子どもスタッフもいないもまわりませんでした。子どもも戦略です！",
+    "adults": "33",
+    "children": "34",
+    "staff": "17",
+    "internalComments": "3回目にして、大人も子どもも最多人数でした。子どもスタッフもいないもまわりませんでした。子どもも戦力です！",
     "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1764510839697.jpg"
   },
   {
