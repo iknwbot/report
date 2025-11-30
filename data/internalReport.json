@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/11/30 21:50:27",
+    "userId": "U6855c7437c873ac5f098429300d0604f",
+    "nickname": "渡邉（大橋）裕美",
+    "siteName": "行徳子ども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E8%A1%8C%E5%BE%B3%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82-%E8%A1%8C%E5%BE%B3%E6%94%AF%E6%89%80/",
+    "eventDate": "2025/11/21 00:00:00",
+    "eventType": "子ども食堂＆フードパントリー",
+    "adults": 39,
+    "children": 59,
+    "staff": 9,
+    "internalComments": "ボラ含めると全参加者で100人超え。\n30分前から並んでいるのでそれだけでお弁当がなくなる。\n次回から規制したい。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1764507027286.jpg"
+  },
+  {
     "timestamp": "2025/11/30 21:32:00",
     "userId": "U9164b748f9318182d77c6b371181d47b",
     "nickname": "やすこ",
