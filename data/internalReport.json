@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/01 16:28:15",
+    "userId": "Ubd16da05eec19174caf91d11dfcde4b9",
+    "nickname": "垣内 美恵",
+    "siteName": "きずなレストラン",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%81%8D%E3%81%9A%E3%81%AA%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3/",
+    "eventDate": "2025/11/15 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 6,
+    "staff": 3,
+    "internalComments": "毎月の、鼓笛練習ではこども食堂から来ていただいているお子様の初参加もあり、子供達はもちろん大人の参加もあり一生懸命に練習をしていました。\n夕飯には、子供の好きなフライドポテトや唐揚げなどを提供し暗くなるまで元気いっぱいでした。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1764574095978.jpg"
+  },
+  {
     "timestamp": "2025/12/01 16:23:20",
     "userId": "Ubd16da05eec19174caf91d11dfcde4b9",
     "nickname": "垣内 美恵",
