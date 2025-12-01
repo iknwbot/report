@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/01 18:05:48",
+    "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2025/11/13 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 10,
+    "staff": 11,
+    "internalComments": "みんなのダイニング、2周年イベント。\n昭和学院のTRIESのみなさんがお手伝いに来てくれて、コラボ企画を行いました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1764579948305.jpg"
+  },
+  {
     "timestamp": "2025/12/01 18:03:21",
     "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
     "nickname": "mika",
