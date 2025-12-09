@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/09 19:23:44",
+    "userId": "U3d3ae8004db8b7e9c71f4863488f8ef7",
+    "nickname": "あつこ",
+    "siteName": "東菅野つなぐ食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E6%9D%B1%E8%8F%85%E9%87%8E%E3%81%A4%E3%81%AA%E3%81%90%E9%A3%9F%E5%A0%82-home/",
+    "eventDate": "2025/12/06 00:00:00",
+    "eventType": "子ども食堂＆フードパントリー",
+    "adults": 14,
+    "children": 15,
+    "staff": 10,
+    "internalComments": "インフルエンザの流行のためか、参加者は少なかったようです。\n寄付もたくさんあり、届けることが出来ず、残念です。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1765275824498.jpg"
+  },
+  {
     "timestamp": "2025/12/05 20:44:55",
     "userId": "U052d76a9047f0650faefd166d9503d40",
     "nickname": "プラット",
