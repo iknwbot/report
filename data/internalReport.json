@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/15 10:39:56",
+    "userId": "U380537e6f10a6f9e1995875eaa3f16a9",
+    "nickname": "吉岡聡子",
+    "siteName": "いちかわ真間食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%81%84%E3%81%A1%E3%81%8B%E3%82%8F%E7%9C%9F%E9%96%93%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2025/12/12 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 10,
+    "children": 58,
+    "staff": 9,
+    "internalComments": "インフルエンザが流行ってるので、テイクアウトに変更する方が20人ほどいらっしゃいました。途中7時くらいに地震があり驚きましたが、良い勉強になりました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1765762796443.jpg"
+  },
+  {
     "timestamp": "2025/12/14 22:31:32",
     "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
     "nickname": "masayoaizawa",
