@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/23 19:45:08",
+    "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
+    "nickname": "岡本一也",
+    "siteName": "もぐもぐスクール(Abiy)",
+    "siteURL": "https://ichikawa.genki365.jp/group_394/",
+    "eventDate": "2025/12/23 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 0,
+    "children": 7,
+    "staff": 5,
+    "internalComments": "福茂さんからお弁当を入れていただいてます。\n今日はクリスマス前ということで、わくわく広場さんから洋菓子をプレゼントいただきました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1766486708877.jpg"
+  },
+  {
     "timestamp": "2025/12/23 10:38:30",
     "userId": "Ud1e26db5002c62d4e93b08e835915b30",
     "nickname": "加藤英一",
