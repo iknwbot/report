@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/27 09:18:47",
+    "userId": "Ubd16da05eec19174caf91d11dfcde4b9",
+    "nickname": "垣内 美恵",
+    "siteName": "きずなレストラン",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%81%8D%E3%81%9A%E3%81%AA%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3/",
+    "eventDate": "2025/12/19 00:00:00",
+    "eventType": "フードパントリー",
+    "adults": 15,
+    "children": 0,
+    "staff": 2,
+    "internalComments": "学校給食の依頼を受け、フードパントリーを行いました。\nいつも来てくださる方が多いですが、喜んで持ち帰っていただいています。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2025/12/27 00:01:48",
     "userId": "U425beeb61f5a5e26fdf2eac8b9f13073",
     "nickname": "山本猛",
