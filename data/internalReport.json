@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2025/12/31 08:40:59",
+    "userId": "Ud1c5a403096521fd73a8c8498a63058c",
+    "nickname": "ササキ トシキ",
+    "siteName": "新田こども食堂",
+    "siteURL": "",
+    "eventDate": "2025/12/27 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 15,
+    "children": 12,
+    "staff": 7,
+    "internalComments": "お菓子つりゲームやクジ引き大会等を織り交ぜながらの開催で盛り上がりました。いつも来てくれる学生ボランティア3名の他、一般ボランティア2名も参加。さほど広くない空間に人数が増えると、遊べるスペースが混雑してしまう点は課題と考えています。今回は乳児のおむつ替えコーナーの確保も困難でした。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1767138059793.jpg"
+  },
+  {
     "timestamp": "2025/12/30 23:24:50",
     "userId": "Ud8bc563c681e42b5bb19d0155ab8f431",
     "nickname": "Jumps",
