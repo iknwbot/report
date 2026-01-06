@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/06 17:44:40",
+    "userId": "U05dcb1d92376e2c1d9872dd18e4fc69b",
+    "nickname": "えじそん",
+    "siteName": "わいわい食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%82%8F%E3%81%84%E3%82%8F%E3%81%84%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/01/01 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 125,
+    "children": 125,
+    "staff": 4,
+    "internalComments": "初詣にいらっしゃる親子連れに、汁物を提供しました。穏やかな元旦でした。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2026/01/06 10:59:11",
     "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
     "nickname": "mika",
