@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/11 01:02:23",
+    "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
+    "nickname": "masayoaizawa",
+    "siteName": "市川大野こども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%A4%A7%E9%87%8E%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/01/10 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 5,
+    "staff": 9,
+    "internalComments": "宮久保小メンバーだけの参加。町内の成人の方はいるが、目の前にある大野小の子がいないのは残念…。\n知的障害のあるスタッフの活動として、フリスタさんのフードバンクからいただいたお菓子の袋詰め作業をしています。試しに、種類別に分ける作業をなくし、山のなかから『違う種類の物を◯個』とか、『この山から２個』とか、いろいろチャレンジしてみましたが難航しました。また方法を考えます。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1768060944065.jpg"
+  },
+  {
     "timestamp": "2026/01/10 16:51:24",
     "userId": "U0e7b9dbcd5012d4c3f1b135f76bec9c5",
     "nickname": "坂本道子",
