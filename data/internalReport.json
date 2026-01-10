@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/10 16:51:24",
+    "userId": "U0e7b9dbcd5012d4c3f1b135f76bec9c5",
+    "nickname": "坂本道子",
+    "siteName": "市川南子ども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%8D%97%E5%AD%90%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/01/09 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 13,
+    "children": 40,
+    "staff": 8,
+    "internalComments": "寒い中、大勢の人が参加して下さり、賑やかに楽しんでくれました。",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2026/01/10 11:59:23",
     "userId": "U052d76a9047f0650faefd166d9503d40",
     "nickname": "プラット",
