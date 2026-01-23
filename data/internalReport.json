@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/23 22:27:01",
+    "userId": "U425beeb61f5a5e26fdf2eac8b9f13073",
+    "nickname": "山本猛",
+    "siteName": "北方東部",
+    "siteURL": "",
+    "eventDate": "2026/01/23 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 7,
+    "children": 12,
+    "staff": 11,
+    "internalComments": "今年始めての食堂を開催しました。\n今日(1/23)は、寒い一日になったので、足を運ぶ人が鈍ったのかと思いますが､参加してくれた子ども達は、本当に元気一杯に時間(百人一首､ブロック等)を､過ごしてもらう姿に元気を頂きました。\nこれからも､本当の居場所づくりに取り組んで参りたいと思います。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1769174821585.jpg"
+  },
+  {
     "timestamp": "2026/01/23 20:41:58",
     "userId": "U052d76a9047f0650faefd166d9503d40",
     "nickname": "プラット",
