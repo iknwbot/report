@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/25 23:27:41",
+    "userId": "Ud1c5a403096521fd73a8c8498a63058c",
+    "nickname": "ササキ トシキ",
+    "siteName": "新田こども食堂",
+    "siteURL": "",
+    "eventDate": "2026/01/24 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 17,
+    "children": 20,
+    "staff": 9,
+    "internalComments": "食事は大鍋で調理した鶏汁(ハラール対応として豚汁の具を鶏肉に変えたもの)とご飯、デザートにプリンを付けてご提供しました。イベントは、(ハズレ無しの)ビンゴ大会を開催。大変な盛り上がりとなり、皆さんに大いに楽しんでいただけて良かったです。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1769351261487.jpg"
+  },
+  {
     "timestamp": "2026/01/25 17:05:19",
     "userId": "Udc2992b270a8c21d30737f89f53ae859",
     "nickname": "容子",
