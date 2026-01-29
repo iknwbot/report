@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/29 18:22:55",
+    "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/01/22 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 12,
+    "children": 10,
+    "staff": 3,
+    "internalComments": "肉の山崎さんから頂いたコロッケをみんなで美味しく食べました。人数も多く、賑やかな時間でした。\n明治安田生命様も起こしになり、完全メシをみんなに配るというイベントを開催で、誕生日会もあり盛り沢山な1日でした",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1769678576020.jpg"
+  },
+  {
     "timestamp": "2026/01/29 18:20:53",
     "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
     "nickname": "mika",
