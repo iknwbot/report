@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/01/29 18:20:53",
+    "userId": "Ub07ad2e73e7f1fe279a8f7b66a55c28c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/01/08 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 2,
+    "children": 6,
+    "staff": 2,
+    "internalComments": "落ち着いた雰囲気で小さな子も伸び伸びと過ごした時間になりました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1769678454021.jpg"
+  },
+  {
     "timestamp": "2026/01/28 23:32:34",
     "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
     "nickname": "岡本一也",
