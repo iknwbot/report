@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/02/16 06:27:52",
+    "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
+    "nickname": "masayoaizawa",
+    "siteName": "市川大野こども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%A4%A7%E9%87%8E%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/02/14 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 5,
+    "children": 7,
+    "staff": 9,
+    "internalComments": "ピザーラ市川大野店様からご寄付いただいたピザを昼食に食べました。\n市川大野高等学園の卒業生（障がいのあるスタッフ）が活躍する場として活動していますが、１人むずかしいスタッフがいます。もしかしたら、見学に行きたいなど連絡があるかもしれませんが、『代表の相澤と連絡をとることになっている』と断っていただけると助かります。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1771190872409.jpg"
+  },
+  {
     "timestamp": "2026/02/15 09:28:38",
     "userId": "U0e7b9dbcd5012d4c3f1b135f76bec9c5",
     "nickname": "坂本道子",
