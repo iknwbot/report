@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/03/27 15:15:17",
+    "userId": "Ub5a039409600981fa7d42280edfd180c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/03/26 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 8,
+    "children": 15,
+    "staff": 4,
+    "internalComments": "餃子の王将から提供いただいたお弁当をみんなでおいしく食べました。\n誕生日会だったこともあり、大変盛り上がった。\n己書講座もありみんなが楽しくわちゃわちゃしながらもお誕生日をお祝いしてとても良かった",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1774592117722.jpg"
+  },
+  {
     "timestamp": "2026/03/27 15:07:50",
     "userId": "Ub5a039409600981fa7d42280edfd180c",
     "nickname": "mika",
