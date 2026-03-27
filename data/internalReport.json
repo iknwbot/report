@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/03/27 15:07:50",
+    "userId": "Ub5a039409600981fa7d42280edfd180c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/03/19 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 3,
+    "children": 7,
+    "staff": 1,
+    "internalComments": "少し子どもたちの調子が不調だったのか、機嫌が良くない子が多く雰囲気はいつもよりどんよりしている感じだった。\nでも最後までカルタなどで遊んでくれて無事にご飯を食べて帰ることができた",
+    "githubUrl": ""
+  },
+  {
     "timestamp": "2026/03/27 15:01:21",
     "userId": "Ub5a039409600981fa7d42280edfd180c",
     "nickname": "mika",
