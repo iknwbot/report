@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/05/07 11:30:06",
+    "userId": "Ub5a039409600981fa7d42280edfd180c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/04/23 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 4,
+    "children": 10,
+    "staff": 1,
+    "internalComments": "年齢別謎解きゲームを行った。\n小さい子(2.3歳)はフルーツ探し。\n5~1年生までは簡単なクイズやなぞなぞの謎解き、それ以上の子は難しめの謎解きを行った。\n最後に辿り着くのは冷蔵庫でそこを開けると、フルーツとサイダーがたくさん。みんなワクワクして最後にみんなでフルーツポンチを作って食べました。たくさん賑わってみんなが楽しそうでした。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1778121007125.jpg"
+  },
+  {
     "timestamp": "2026/05/07 11:09:56",
     "userId": "Ub5a039409600981fa7d42280edfd180c",
     "nickname": "mika",
