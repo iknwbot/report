@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/06/30 19:26:05",
+    "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
+    "nickname": "岡本一也",
+    "siteName": "もぐもぐスクール(Abiy)",
+    "siteURL": "https://ichikawa.genki365.jp/group_394/",
+    "eventDate": "2026/06/30 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 0,
+    "children": 3,
+    "staff": 3,
+    "internalComments": "ここのところの天候不順等で、体調を崩された参加者がおり、少ない人数になってしまいました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1782815165420.jpg"
+  },
+  {
     "timestamp": "2026/06/30 19:25:14",
     "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
     "nickname": "岡本一也",
