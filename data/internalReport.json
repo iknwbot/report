@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/07/01 17:31:45",
+    "userId": "Ua23d544db2eddee34d361204337a2e1b",
+    "nickname": "ほたママ(かとちゃん)",
+    "siteName": "鬼越つなぐ食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E9%AC%BC%E8%B6%8A%E3%81%A4%E3%81%AA%E3%81%90%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/06/12 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 15,
+    "children": 35,
+    "staff": 6,
+    "internalComments": "ひろばで、ピザを焼いて食べました。定着してきて、毎月来てくれる親子もいます。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1782894705515.jpg"
+  },
+  {
     "timestamp": "2026/06/30 23:05:35",
     "userId": "U9164b748f9318182d77c6b371181d47b",
     "nickname": "やすこ",
