@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/07/24 21:00:31",
+    "userId": "U052d76a9047f0650faefd166d9503d40",
+    "nickname": "プラット",
+    "siteName": "地域の学び舎 プラット",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%9C%B0%E5%9F%9F%E3%81%AE%E5%AD%A6%E3%81%B3%E8%88%8E-%E3%83%97%E3%83%A9%E3%83%83%E3%83%88/",
+    "eventDate": "2026/07/24 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 0,
+    "children": 6,
+    "staff": 3,
+    "internalComments": "今日は新規で来てくれた子がいたこともあり、新鮮な空気感が流れていました。食事の時間はボランティアさんと子どもで大いに話が盛り上がり、笑い声のあふれる食卓になりました。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1784894431356.jpg"
+  },
+  {
     "timestamp": "2026/07/24 12:34:16",
     "userId": "U5d8ff087a9829fda91ee4de36b935ee8",
     "nickname": "Satoru",
