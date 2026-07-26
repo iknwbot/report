@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/07/26 22:22:36",
+    "userId": "Ubd0f6ff0746ea516d914e59e5b585e67",
+    "nickname": "masayoaizawa",
+    "siteName": "市川大野こども食堂",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E5%B8%82%E5%B7%9D%E5%A4%A7%E9%87%8E%E3%81%93%E3%81%A9%E3%82%82%E9%A3%9F%E5%A0%82/",
+    "eventDate": "2026/07/25 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 8,
+    "children": 12,
+    "staff": 8,
+    "internalComments": "２回目のドライカレーも無事にできました。ご新規の２組も楽しんでくれたようでした。乳幼児ばかりが増えていますが、安全面として、調理台が高い（椅子にひざ立ちする姿が多い）のが気になっています。\n緊急助成金でお菓子とパックごはんを買いましたが、3000円では思っていた以上に買えなかったです…。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1785072156494.jpg"
+  },
+  {
     "timestamp": "2026/07/24 21:56:52",
     "userId": "U425beeb61f5a5e26fdf2eac8b9f13073",
     "nickname": "山本猛",
