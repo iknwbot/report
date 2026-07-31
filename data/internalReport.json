@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/07/31 15:23:23",
+    "userId": "Ub5a039409600981fa7d42280edfd180c",
+    "nickname": "mika",
+    "siteName": "みんなのダイニング",
+    "siteURL": "https://foodvalueplus.jp/dining/",
+    "eventDate": "2026/07/09 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 6,
+    "children": 16,
+    "staff": 1,
+    "internalComments": "れいちゃんママというフルート奏者の方が来てくれて、子どもたちの前でフルートの演奏を行った。知ってる曲から大人が懐かしいと思う曲などを演奏してくれ、歌をうないながら演奏を聞いている姿があった。\n実際に学校の部活でフルートを吹いている子供もいたため、興味津々で演奏を聞いていた。また10月にも演奏に来てくれるので、その時はもっと子供たちからリクエスト曲を集めて、もっと盛り上がるようにしたいと思ったし、リコーダーを持っている子供たちとの演奏ができるようにしたいと話した。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1785479004204.jpg"
+  },
+  {
     "timestamp": "2026/07/31 15:19:42",
     "userId": "Ub5a039409600981fa7d42280edfd180c",
     "nickname": "mika",
