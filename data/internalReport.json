@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/08/10 19:44:19",
+    "userId": "Ud1c5a403096521fd73a8c8498a63058c",
+    "nickname": "ササキ トシキ",
+    "siteName": "新田こども食堂",
+    "siteURL": "",
+    "eventDate": "2026/08/08 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 12,
+    "children": 18,
+    "staff": 5,
+    "internalComments": "夏休み臨時開催として、夕方〜夜に実施しました。猛暑のためか、夕方5時半以降に来所が集中。初めてお越しいただいたご家族も数組いらっしゃって、とても良い雰囲気と高評価をいただきました。今回はポップコーン以外には特にイベントは用意しませんでしたが、涼しい部屋で皆さん思い思いに楽しんでいただき、良かったです。次回は22日に開催します。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1786358660101.jpg"
+  },
+  {
     "timestamp": "2026/08/10 15:29:54",
     "userId": "Udc2992b270a8c21d30737f89f53ae859",
     "nickname": "容子",
