@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/09/29 19:18:51",
+    "userId": "U490d723cb2b7eb6fd51ea4469bdc36c1",
+    "nickname": "岡本一也",
+    "siteName": "もぐもぐスクール(Abiy)",
+    "siteURL": "https://ichikawa.genki365.jp/group_394/",
+    "eventDate": "2026/09/29 00:00:00",
+    "eventType": "子ども食堂（お弁当配布）",
+    "adults": 0,
+    "children": 4,
+    "staff": 3,
+    "internalComments": "福茂さんが明日で一時閉店とのことで、しばらくお弁当難民になります。\nどうしたものか、また方針が決まってないんです。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1790677131536.jpg"
+  },
+  {
     "timestamp": "2026/09/29 09:11:05",
     "userId": "Ubb6959ae28524f5a3f4f73b075ac9546",
     "nickname": "古澤とき子",
