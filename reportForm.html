@@ -75,7 +75,19 @@
 </div>
 
 <script>
+const LIFF_ID = "2007288568-Oj9P6yMn";
 const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwyDc0GFNBChfjsbiAP9HLmWTWELhUPUOcsbV1iQZagEbUf-wHm1dLYJdx2XTkWLT8E8Q/exec";
+
+// LIFF初期化（バックグラウンドで安全に初期化、エラー時も画面動作はブロックしない）
+if (typeof liff !== "undefined") {
+  liff.init({ liffId: LIFF_ID })
+    .then(() => {
+      console.log("LIFF initialized successfully");
+    })
+    .catch((err) => {
+      console.warn("LIFF init warning:", err);
+    });
+}
 
 const params = new URLSearchParams(window.location.search);
 const userId = params.get("userId");
@@ -219,13 +231,10 @@ document.getElementById("confirmSubmit").addEventListener("click", async () => {
 
   if (result.status === "success") {
     document.getElementById("loadingMsg").style.display = "none";
-    document.getElementById("confirmSubmit").disabled = false; // ボタンを再有効化
-    showSuccessPopup("活動報告が完了しました。投稿されたらLINEで通知します。");
     closeModal();
-    document.getElementById("reportForm").reset();
-    document.querySelector(".file-name").textContent = "未選択"; // ファイル名もリセット
-    document.getElementById("confirmImagePreview").innerHTML = ""; // 画像プレビューもクリア
-    imageBase64 = ""; // 画像データもリセット
+    // フォームを非表示にして再送信を防止
+    document.getElementById("reportForm").style.display = "none";
+    showSuccessPopup("活動報告の受付が完了しました。投稿後にLINEで通知します。");
   } else {
     alert("エラーが発生しました: " + result.message);
     document.getElementById("loadingMsg").style.display = "none";
@@ -244,8 +253,8 @@ function showSuccessPopup(message) {
   successModal.classList.add("modal", "show");
   successModal.innerHTML = `
     <div class="modal-content">
-      <h3>✅ ${message}</h3>
-      <button onclick="closeSuccessPopup()">OK</button>
+      <h3 style="white-space: pre-wrap;">✅ ${message}</h3>
+      <button onclick="closeSuccessPopup()">閉じる</button>
     </div>`;
   document.body.appendChild(successModal);
 }
@@ -253,6 +262,36 @@ function showSuccessPopup(message) {
 function closeSuccessPopup() {
   const successModal = document.querySelector(".modal.show");
   if (successModal) successModal.remove();
+
+  // 1. LIFF環境であればウィンドウを閉じる
+  try {
+    if (typeof liff !== "undefined" && liff.isInClient && liff.isInClient()) {
+      liff.closeWindow();
+      return;
+    }
+  } catch (e) {
+    console.warn("liff.closeWindow warning:", e);
+  }
+
+  // 2. ブラウザ等で閉じられない場合のフォールバック: 完了画面を表示
+  let completionScreen = document.getElementById("completionScreen");
+  if (!completionScreen) {
+    completionScreen = document.createElement("div");
+    completionScreen.id = "completionScreen";
+    completionScreen.style.padding = "40px 20px";
+    completionScreen.style.textAlign = "center";
+    completionScreen.innerHTML = `
+      <h2 style="color: #4CAF50; margin-bottom: 16px;">✅ 受付完了</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #333;">
+        活動報告を受け付けました。<br>
+        反映およびLINE通知までしばらくお待ちください。
+      </p>
+      <p style="font-size: 14px; color: #888; margin-top: 24px;">
+        ※この画面は閉じていただいて構いません。
+      </p>
+    `;
+    document.body.appendChild(completionScreen);
+  }
 }
 
   function closeModal() {
