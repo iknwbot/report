@@ -1,5 +1,19 @@
 [
   {
+    "timestamp": "2026/10/10 18:15:40",
+    "userId": "U585207e9cedef89bb7ba052b21f32346",
+    "nickname": "金子紀子",
+    "siteName": "子ども食堂「だれでも」",
+    "siteURL": "https://ichikawa-kodomosyokudounw.jimdofree.com/%E6%8B%A0%E7%82%B9%E7%B4%B9%E4%BB%8B/%E3%82%82%E3%81%90%E3%82%82%E3%81%90%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB/",
+    "eventDate": "2026/10/10 00:00:00",
+    "eventType": "子ども食堂（会食）",
+    "adults": 11,
+    "children": 18,
+    "staff": 6,
+    "internalComments": "三連休初日なので参加者少ないかと思い調理量を減らしたところ、意外に参加者多く、足りなくなりそうでドキドキした。結果的にはぴったり空になる感じだったが、毎回どのくらい作るかが難しい。\nご近所からみかんを頂いたので、お土産にした。",
+    "githubUrl": "https://raw.githubusercontent.com/iknwbot/report/main/uploads/report_image_1791623740750.jpg"
+  },
+  {
     "timestamp": "2026/10/09 20:55:20",
     "userId": "U052d76a9047f0650faefd166d9503d40",
     "nickname": "プラット",
